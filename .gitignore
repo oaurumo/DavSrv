@@ -1,0 +1,38 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Kotlin
+.kotlin/
+
+# Local configuration (machine specific, never commit)
+local.properties
+keystore.properties
+
+# Signing material
+*.jks
+*.keystore
+*.p12
+
+# Build output
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+output.json
+app/release/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

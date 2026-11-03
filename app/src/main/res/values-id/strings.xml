@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Indonesian. Kept in sync with values-in/ on purpose: Android reports the
+  Indonesian locale either as "id" or with the legacy ISO code "in" depending
+  on the API level, and aapt2 stores them as two separate configurations. Having
+  both guarantees the translation is picked up in either case.
+-->
+<resources>
+    <string name="app_name">DavSrv</string>
+
+    <!-- Tabs / status -->
+    <string name="tab_home">Ringkasan</string>
+    <string name="tab_files">Berkas</string>
+    <string name="tab_users">Akun</string>
+    <string name="tab_logs">Log</string>
+    <string name="tab_settings">Setelan</string>
+    <string name="status_error">Kesalahan</string>
+    <string name="status_running">Berjalan</string>
+    <string name="status_stopped">Berhenti</string>
+
+    <!-- Home hero -->
+    <string name="server_running">Server berjalan</string>
+    <string name="lan_hint">Dapat diakses dari perangkat di jaringan Wi-Fi yang sama</string>
+    <string name="action_qr">Kode QR</string>
+    <string name="action_copy">Salin alamat</string>
+    <string name="action_refresh_ip">Segarkan IP</string>
+    <string name="toast_copied">Alamat disalin</string>
+    <string name="action_stop">Hentikan server</string>
+    <string name="server_stopped">Server berhenti</string>
+    <string name="server_stopped_hint">Jalankan server untuk mengakses berkas perangkat ini dari komputer atau perangkat lain</string>
+    <string name="action_start">Jalankan server WebDAV</string>
+    <string name="last_address">Alamat terakhir: %1$s</string>
+
+    <!-- Stats -->
+    <string name="stat_requests">Total permintaan</string>
+    <string name="stat_uptime">Waktu aktif</string>
+    <string name="stat_in">Diterima</string>
+    <string name="stat_out">Dikirim</string>
+    <string name="uptime_hm">%1$dj %2$dm</string>
+    <string name="uptime_ms">%1$dmnt %2$ddtk</string>
+    <string name="uptime_s">%1$ddtk</string>
+
+    <!-- Warnings -->
+    <string name="warn_storage_title">Izin penyimpanan diperlukan</string>
+    <string name="warn_storage_desc">Mode jalur memerlukan izin untuk membaca dan menulis folder bersama. Anda juga dapat beralih ke “Pilih folder” (SAF) agar lebih kompatibel.</string>
+    <string name="action_grant">Izinkan</string>
+    <string name="warn_notif_title">Izin notifikasi nonaktif</string>
+    <string name="warn_notif_desc">Notifikasi menjaga layanan latar depan tetap aktif dan menampilkan alamat serta tombol berhenti.</string>
+    <string name="action_enable_notif">Aktifkan notifikasi</string>
+
+    <!-- Storage card -->
+    <string name="storage_card_title">Folder bersama</string>
+    <string name="access_rw">Baca dan tulis</string>
+    <string name="access_ro">Hanya baca</string>
+    <string name="access_none">Tanpa akses</string>
+    <string name="action_pick_folder">Pilih folder</string>
+    <string name="action_all_files">Akses semua berkas</string>
+    <string name="action_self_test">Uji mandiri penyimpanan</string>
+    <string name="hint_no_access_path">Izin penyimpanan belum diberikan; folder bersama tidak dapat dibaca. Ketuk “Akses semua berkas” untuk memberi izin, atau beralih ke “Pilih folder” (SAF).</string>
+    <string name="hint_no_access_saf">Folder yang dipilih tidak lagi valid; beri izin ulang melalui “Pilih folder”.</string>
+    <string name="hint_read_only_path">Hanya baca: berkas tidak dapat ditulis. Ketuk “Akses semua berkas” untuk memberi izin, jika tidak klien tidak dapat mengunggah, mengubah, atau menghapus berkas.</string>
+    <string name="hint_read_only_saf">Hanya baca: klien tidak dapat menulis. Pilih ulang folder di “Pilih folder” dan beri izin baca dan tulis.</string>
+    <string name="self_test_ok">Uji mandiri berhasil: membuat, menulis, mengganti nama, dan menghapus semuanya berfungsi</string>
+
+    <!-- Connect card -->
+    <string name="how_to_connect">Cara menyambung</string>
+    <string name="client_windows">Windows</string>
+    <string name="client_windows_hint">File Explorer → Map network drive, masukkan alamat di atas</string>
+    <string name="client_macos">macOS</string>
+    <string name="client_macos_hint">Finder → Go → Connect to Server (⌘K)</string>
+    <string name="client_ios">iOS / iPadOS</string>
+    <string name="client_ios_hint">Aplikasi Files → Connect to Server</string>
+    <string name="client_android">Android</string>
+    <string name="client_android_hint">Pengelola berkas apa pun yang mendukung WebDAV, tambahkan akun</string>
+    <string name="connect_footer">Mendukung autentikasi HTTP Basic, penguncian tulis, dan lanjutkan Range</string>
+
+    <!-- QR sheet -->
+    <string name="qr_title">Pindai untuk menyambung</string>
+    <string name="qr_hint">Pindai kode dengan klien WebDAV di ponsel</string>
+    <string name="qr_cd">Kode QR alamat server</string>
+    <string name="qr_no_network">Tidak ada koneksi jaringan; kode QR tidak dapat dibuat</string>
+    <string name="qr_account_hint">Lihat halaman “Akun” untuk kredensial</string>
+    <string name="qr_map_hint">Tips: Windows / macOS dapat langsung “Map network drive”</string>
+
+    <!-- Files -->
+    <string name="cd_up">Naik satu tingkat</string>
+    <string name="cd_new_folder">Folder baru</string>
+    <string name="cd_refresh">Segarkan</string>
+    <string name="action_retry">Coba lagi</string>
+    <string name="empty_folder">Folder ini kosong</string>
+    <string name="label_folder">Folder</string>
+    <string name="cd_delete">Hapus</string>
+    <string name="new_folder_title">Folder baru</string>
+    <string name="label_name">Nama</string>
+    <string name="action_create">Buat</string>
+    <string name="action_cancel">Batal</string>
+    <string name="delete_confirm_title">Konfirmasi hapus</string>
+    <string name="delete_confirm_text">Hapus “%1$s” secara permanen? Tindakan ini tidak dapat dibatalkan.</string>
+
+    <!-- Users -->
+    <string name="users_card_title">Akun akses</string>
+    <string name="users_card_desc">Semua klien diautentikasi via HTTP Basic dengan akun ini. Akun bawaan adalah root / 1234 — segera ganti kata sandinya.</string>
+    <string name="action_add_account">Tambah akun</string>
+    <string name="delete_account_title">Hapus akun</string>
+    <string name="delete_account_text">Hapus akun “%1$s”? Klien yang tersambung akan langsung kehilangan akses.</string>
+    <string name="badge_read_only">Hanya baca</string>
+    <string name="badge_read_write">Baca dan tulis</string>
+    <string name="cd_edit">Ubah</string>
+    <string name="add_account_title">Tambah akun</string>
+    <string name="edit_account_title">Ubah akun</string>
+    <string name="label_username">Nama pengguna</string>
+    <string name="label_password">Kata sandi</string>
+    <string name="label_new_password">Kata sandi baru (biarkan kosong untuk mempertahankan)</string>
+    <string name="label_read_only_account">Akun hanya baca</string>
+    <string name="read_only_desc">Hanya dapat menelusuri dan mengunduh; berkas tidak dapat diubah</string>
+    <string name="err_username_required">Masukkan nama pengguna</string>
+    <string name="err_password_short">Kata sandi minimal 4 karakter</string>
+    <string name="err_password_required">Harap atur kata sandi</string>
+    <string name="action_save">Simpan</string>
+
+    <!-- Logs -->
+    <string name="logs_recent">%1$d permintaan terbaru</string>
+    <string name="action_clear">Bersihkan</string>
+    <string name="logs_empty_title">Belum ada permintaan</string>
+    <string name="logs_empty_desc">Setiap permintaan klien akan muncul di sini setelah tersambung</string>
+
+    <!-- Settings -->
+    <string name="section_server">Server</string>
+    <string name="label_port">Port</string>
+    <string name="err_port_range">Port harus 1024 - 65535</string>
+    <string name="action_save_port">Simpan port</string>
+    <string name="port_restart_hint">Server akan dimulai ulang otomatis setelah diubah</string>
+    <string name="section_storage">Penyimpanan</string>
+    <string name="current_shared_folder">Folder bersama saat ini</string>
+    <string name="action_request_storage">Izin penyimpanan</string>
+    <string name="path_mode_hint">Atau tentukan jalur langsung (lebih cepat, tetapi perlu izin penyimpanan)</string>
+    <string name="label_shared_path">Jalur bersama</string>
+    <string name="action_use_path">Gunakan jalur ini</string>
+    <string name="no_permission">Tanpa izin</string>
+    <string name="section_runtime">Runtime dan baterai</string>
+    <string name="pref_boot_title">Mulai saat boot</string>
+    <string name="pref_boot_desc">Layanan dimulai ulang otomatis setelah perangkat dinyalakan ulang</string>
+    <string name="pref_wifi_title">Jaga Wi-Fi tetap aktif</string>
+    <string name="pref_wifi_desc">Lebih stabil untuk transfer besar; konsumsi baterai sedikit lebih tinggi</string>
+    <string name="pref_hidden_title">Tampilkan berkas tersembunyi</string>
+    <string name="pref_hidden_desc">Berkas dan folder yang diawali titik</string>
+    <string name="section_language">Bahasa</string>
+    <string name="pref_language_title">Bahasa aplikasi</string>
+    <string name="section_about">Tentang</string>
+    <string name="about_name">Nama aplikasi</string>
+    <string name="about_version">Versi</string>
+    <string name="about_package">Paket</string>
+    <string name="about_protocol">Protokol</string>
+    <string name="about_support">Dukungan sistem</string>
+    <string name="about_desc">DavSrv adalah server WebDAV LAN yang ringan: jalankan layanan latar depan dan perangkat lain dapat membaca serta menulis berkas perangkat ini melalui Wi-Fi. Tidak ada CPU wake lock saat berjalan; konsumsi daya saat menganggur hampir nol.</string>
+    <string name="default_account_hint">Akun bawaan root / 1234 — ganti kata sandi di halaman “Akun”</string>
+
+    <!-- ViewModel / errors -->
+    <string name="err_root_unavailable_check">Akar penyimpanan tidak tersedia; periksa izin atau pilih ulang folder</string>
+    <string name="err_dir_missing">Direktori tidak ditemukan</string>
+    <string name="err_not_a_dir">Bukan direktori</string>
+    <string name="err_read_failed">Gagal membaca</string>
+    <string name="err_name_invalid">Nama tidak valid</string>
+    <string name="err_root_unavailable">Akar penyimpanan tidak tersedia</string>
+    <string name="err_exists">Item dengan nama ini sudah ada</string>
+    <string name="err_create_failed">Gagal membuat</string>
+    <string name="err_entry_missing">Item tidak ditemukan</string>
+    <string name="err_delete_failed">Gagal menghapus</string>
+    <string name="err_username_empty_colon">Nama pengguna tidak boleh kosong dan tidak boleh mengandung “:”</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel">Status server</string>
+    <string name="notif_channel_desc">Status berjalannya server WebDAV</string>
+    <string name="notif_starting">Memulai…</string>
+    <string name="notif_start_failed">Gagal memulai: %1$s</string>
+    <string name="notif_running_title">DavSrv berjalan</string>
+    <string name="notif_port_suffix">WebDAV · port %1$d</string>
+    <string name="notif_action_stop">Hentikan</string>
+    <string name="error_start_failed">Layanan gagal dimulai</string>
+
+    <!-- WebDAV server responses (localized) -->
+    <string name="srv_err_create_file">Tidak dapat membuat berkas: folder tidak dapat ditulis, izin penyimpanan tidak ada, atau nama berkas tidak didukung</string>
+    <string name="srv_err_delete">Gagal menghapus: folder tidak dapat ditulis atau item sedang dipakai sistem atau aplikasi lain</string>
+    <string name="srv_err_exists">Koleksi sudah ada</string>
+    <string name="srv_err_mkcol">Tidak dapat membuat folder: folder induk tidak dapat ditulis atau nama tidak didukung</string>
+    <string name="srv_err_dest_missing">Header Destination tidak ada</string>
+    <string name="srv_err_dest_unparsable">Header Destination tidak dapat diurai</string>
+    <string name="srv_err_dest_path_invalid">Jalur tujuan tidak valid</string>
+    <string name="srv_err_dest_name_invalid">Nama tujuan tidak valid</string>
+    <string name="srv_err_same_path">Sumber dan tujuan sama</string>
+    <string name="srv_err_into_self">Tidak dapat menyalin atau memindahkan item ke dalam dirinya sendiri</string>
+    <string name="srv_err_dest_parent_missing">Folder tujuan tidak ada</string>
+    <string name="srv_err_dest_not_dir">Tujuan bukan folder</string>
+    <string name="srv_err_dest_exists">Tujuan sudah ada dan penimpaan tidak diizinkan</string>
+    <string name="srv_err_file_over_dir">Berkas tidak dapat menimpa folder</string>
+    <string name="srv_err_overwrite_failed">Item dengan nama sama ada di tujuan dan tidak dapat diganti</string>
+    <string name="srv_err_transfer">Pindah/salin gagal: folder tujuan tidak dapat ditulis atau nama tidak didukung (berkas asli tidak diubah)</string>
+    <string name="srv_err_lock_expired">Kunci telah kedaluwarsa</string>
+    <string name="srv_err_lock_token_missing">Lock-Token tidak ada</string>
+    <string name="srv_err_lock_not_found">Kunci tidak ada atau sudah kedaluwarsa</string>
+    <string name="srv_err_start_failed">Gagal memulai</string>
+    <string name="srv_err_root_unavailable">Folder bersama tidak tersedia: periksa izin penyimpanan atau pilih folder lagi</string>
+    <string name="srv_err_root_unavailable_short">Folder bersama tidak tersedia</string>
+    <string name="srv_err_internal">Kesalahan server: %1$s</string>
+    <string name="srv_err_readonly_account">Akun ini hanya baca dan tidak dapat mengubah berkas</string>
+    <string name="srv_hint_saf_readonly">Folder bersama tidak punya izin tulis: buka DavSrv → Ringkasan → Folder bersama dan pilih folder lagi</string>
+    <string name="srv_hint_path_readonly">Penyimpanan hanya baca: beri “Akses semua berkas” di Setelan → Aplikasi → DavSrv → Izin, atau beralih ke “Pilih folder”</string>
+    <string name="srv_err_locked">Sumber daya terkunci</string>
+    <string name="srv_err_method">Metode tidak diizinkan</string>
+    <string name="srv_err_not_found">Tidak ditemukan</string>
+    <string name="srv_err_put_root">Tidak dapat menulis ke akar server</string>
+    <string name="srv_err_parent_missing">Folder induk tidak ditemukan</string>
+    <string name="srv_err_delete_root">Tidak dapat menghapus akar server</string>
+    <string name="srv_err_transfer_root">Tidak dapat menyalin atau memindahkan akar server</string>
+    <string name="srv_err_unauthorized">Tidak diizinkan</string>
+    <string name="srv_selftest_no_root">Folder bersama tidak tersedia, beri izin lagi</string>
+    <string name="srv_selftest_no_create">Tidak dapat membuat berkas: izin tulis tidak ada</string>
+    <string name="srv_selftest_write_failed">Tidak dapat menulis berkas: %1$s</string>
+    <string name="srv_selftest_no_rename">Tidak dapat mengganti nama: penyimpanan ini tidak mendukung penggantian nama</string>
+    <string name="srv_selftest_rename_lost">Berkas tidak ditemukan setelah penggantian nama</string>
+    <string name="srv_selftest_read_failed">Gagal membaca: berkas yang ditulis tidak dapat dibaca kembali</string>
+    <string name="srv_selftest_mismatch">Isi tidak cocok setelah menulis (%1$d bita ditulis, %2$d bita dibaca)</string>
+    <string name="srv_selftest_denied">izin ditolak</string>
+    <string name="language_system">Ikuti sistem</string>
+    <string name="language_system_value">Ikuti sistem (%1$s)</string>
+
+
+    <!-- Built-in browser page -->
+    <string name="web_root">Akar</string>
+    <string name="web_upload">Unggah berkas</string>
+    <string name="web_new_folder">Folder baru</string>
+    <string name="web_items">%1$d item</string>
+    <string name="web_up">Naik satu tingkat</string>
+    <string name="web_dir_items">%1$d item</string>
+    <string name="web_empty">Folder ini kosong</string>
+    <string name="web_footer">DavSrv · server WebDAV LAN</string>
+    <string name="web_free">Kosong %1$s dari %2$s</string>
+    <string name="web_uploading">Mengunggah %1$s</string>
+    <string name="web_upload_failed">Unggah gagal: %1$s (%2$s)</string>
+    <string name="web_mkdir_prompt">Nama folder baru</string>
+    <string name="web_create_failed">Gagal membuat: %1$s</string>
+    <string name="web_downloading">Memulai unduhan…</string>
+
+</resources>

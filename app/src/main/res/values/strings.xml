@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DavSrv</string>
+
+    <!-- Tabs / status -->
+    <string name="tab_home">Overview</string>
+    <string name="tab_files">Files</string>
+    <string name="tab_users">Accounts</string>
+    <string name="tab_logs">Logs</string>
+    <string name="tab_settings">Settings</string>
+    <string name="status_error">Error</string>
+    <string name="status_running">Running</string>
+    <string name="status_stopped">Stopped</string>
+
+    <!-- Home hero -->
+    <string name="server_running">Server running</string>
+    <string name="lan_hint">Accessible from devices on the same Wi-Fi network</string>
+    <string name="action_qr">QR code</string>
+    <string name="action_copy">Copy address</string>
+    <string name="action_refresh_ip">Refresh IP</string>
+    <string name="toast_copied">Address copied</string>
+    <string name="action_stop">Stop server</string>
+    <string name="server_stopped">Server stopped</string>
+    <string name="server_stopped_hint">Start the server to access this device\'s files from a computer or other devices</string>
+    <string name="action_start">Start WebDAV server</string>
+    <string name="last_address">Last address: %1$s</string>
+
+    <!-- Stats -->
+    <string name="stat_requests">Total requests</string>
+    <string name="stat_uptime">Uptime</string>
+    <string name="stat_in">Received</string>
+    <string name="stat_out">Sent</string>
+    <string name="uptime_hm">%1$dh %2$dm</string>
+    <string name="uptime_ms">%1$dmin %2$ds</string>
+    <string name="uptime_s">%1$ds</string>
+
+    <!-- Warnings -->
+    <string name="warn_storage_title">Storage permission required</string>
+    <string name="warn_storage_desc">Path mode needs permission to read and write the shared folder. You can also switch to \"Choose folder\" (SAF) for better compatibility.</string>
+    <string name="action_grant">Grant</string>
+    <string name="warn_notif_title">Notification permission is off</string>
+    <string name="warn_notif_desc">Notifications keep the foreground service alive and show the address and a stop button.</string>
+    <string name="action_enable_notif">Enable notifications</string>
+
+    <!-- Storage card -->
+    <string name="storage_card_title">Shared folder</string>
+    <string name="access_rw">Read &amp; write</string>
+    <string name="access_ro">Read only</string>
+    <string name="access_none">No access</string>
+    <string name="action_pick_folder">Choose folder</string>
+    <string name="action_all_files">All files access</string>
+    <string name="action_self_test">Storage self-test</string>
+    <string name="hint_no_access_path">Storage permission not granted yet; the shared folder cannot be read. Tap \"All files access\" to authorize, or switch to \"Choose folder\" (SAF).</string>
+    <string name="hint_no_access_saf">The selected folder is no longer valid; please authorize again via \"Choose folder\".</string>
+    <string name="hint_read_only_path">Read-only: files cannot be written. Tap \"All files access\" to grant access, otherwise clients cannot upload, modify or delete files.</string>
+    <string name="hint_read_only_saf">Read-only: clients will not be able to write. Re-select the folder in \"Choose folder\" and grant read &amp; write permission.</string>
+    <string name="self_test_ok">Self-test passed: create, write, rename and delete all work</string>
+
+    <!-- Connect card -->
+    <string name="how_to_connect">How to connect</string>
+    <string name="client_windows">Windows</string>
+    <string name="client_windows_hint">File Explorer → Map network drive, enter the address above</string>
+    <string name="client_macos">macOS</string>
+    <string name="client_macos_hint">Finder → Go → Connect to Server (⌘K)</string>
+    <string name="client_ios">iOS / iPadOS</string>
+    <string name="client_ios_hint">Files app → Connect to Server</string>
+    <string name="client_android">Android</string>
+    <string name="client_android_hint">Any WebDAV-capable file manager, add an account</string>
+    <string name="connect_footer">Supports HTTP Basic auth, write locking and Range resume</string>
+
+    <!-- QR sheet -->
+    <string name="qr_title">Scan to connect</string>
+    <string name="qr_hint">Scan the code with a WebDAV client on your phone</string>
+    <string name="qr_cd">QR code of the server address</string>
+    <string name="qr_no_network">No network connection; cannot generate QR code</string>
+    <string name="qr_account_hint">See the \"Accounts\" page for credentials</string>
+    <string name="qr_map_hint">Tip: Windows / macOS can \"Map network drive\" directly</string>
+
+    <!-- Files -->
+    <string name="cd_up">Go up one level</string>
+    <string name="cd_new_folder">New folder</string>
+    <string name="cd_refresh">Refresh</string>
+    <string name="action_retry">Retry</string>
+    <string name="empty_folder">This folder is empty</string>
+    <string name="label_folder">Folder</string>
+    <string name="cd_delete">Delete</string>
+    <string name="new_folder_title">New folder</string>
+    <string name="label_name">Name</string>
+    <string name="action_create">Create</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="delete_confirm_title">Confirm delete</string>
+    <string name="delete_confirm_text">Permanently delete \"%1$s\"? This cannot be undone.</string>
+
+    <!-- Users -->
+    <string name="users_card_title">Access accounts</string>
+    <string name="users_card_desc">All clients authenticate via HTTP Basic with these accounts. Default account is root / 1234 — change the password soon.</string>
+    <string name="action_add_account">Add account</string>
+    <string name="delete_account_title">Delete account</string>
+    <string name="delete_account_text">Delete account \"%1$s\"? Connected clients will immediately lose access.</string>
+    <string name="badge_read_only">Read only</string>
+    <string name="badge_read_write">Read &amp; write</string>
+    <string name="cd_edit">Edit</string>
+    <string name="add_account_title">Add account</string>
+    <string name="edit_account_title">Edit account</string>
+    <string name="label_username">Username</string>
+    <string name="label_password">Password</string>
+    <string name="label_new_password">New password (leave blank to keep)</string>
+    <string name="label_read_only_account">Read-only account</string>
+    <string name="read_only_desc">Can browse and download only; files cannot be modified</string>
+    <string name="err_username_required">Please enter a username</string>
+    <string name="err_password_short">Password must be at least 4 characters</string>
+    <string name="err_password_required">Please set a password</string>
+    <string name="action_save">Save</string>
+
+    <!-- Logs -->
+    <string name="logs_recent">%1$d recent requests</string>
+    <string name="action_clear">Clear</string>
+    <string name="logs_empty_title">No requests yet</string>
+    <string name="logs_empty_desc">Every client request will appear here after connection</string>
+
+    <!-- Settings -->
+    <string name="section_server">Server</string>
+    <string name="label_port">Port</string>
+    <string name="err_port_range">Port must be 1024 - 65535</string>
+    <string name="action_save_port">Save port</string>
+    <string name="port_restart_hint">The server restarts automatically after change</string>
+    <string name="section_storage">Storage</string>
+    <string name="current_shared_folder">Current shared folder</string>
+    <string name="action_request_storage">Storage permission</string>
+    <string name="path_mode_hint">Or specify a path directly (faster, but requires storage permission)</string>
+    <string name="label_shared_path">Shared path</string>
+    <string name="action_use_path">Use this path</string>
+    <string name="no_permission">No permission</string>
+    <string name="section_runtime">Runtime &amp; battery</string>
+    <string name="pref_boot_title">Start on boot</string>
+    <string name="pref_boot_desc">Restart the service automatically after device reboot</string>
+    <string name="pref_wifi_title">Keep Wi-Fi awake</string>
+    <string name="pref_wifi_desc">More stable for large transfers; slightly higher battery use</string>
+    <string name="pref_hidden_title">Show hidden files</string>
+    <string name="pref_hidden_desc">Files and folders starting with a dot</string>
+    <string name="section_language">Language</string>
+    <string name="pref_language_title">App language</string>
+    <string name="section_about">About</string>
+    <string name="about_name">App name</string>
+    <string name="about_version">Version</string>
+    <string name="about_package">Package</string>
+    <string name="about_protocol">Protocol</string>
+    <string name="about_support">System support</string>
+    <string name="about_desc">DavSrv is a lightweight LAN WebDAV server: start the foreground service and other devices can read and write this device\'s files over Wi-Fi. No CPU wake lock is held at runtime; idle power draw is near zero.</string>
+    <string name="default_account_hint">Default account root / 1234 — change the password on the \"Accounts\" page</string>
+
+    <!-- ViewModel / errors -->
+    <string name="err_root_unavailable_check">Storage root unavailable; check permission or re-select the folder</string>
+    <string name="err_dir_missing">Directory not found</string>
+    <string name="err_not_a_dir">Not a directory</string>
+    <string name="err_read_failed">Failed to read</string>
+    <string name="err_name_invalid">Invalid name</string>
+    <string name="err_root_unavailable">Storage root unavailable</string>
+    <string name="err_exists">An item with this name already exists</string>
+    <string name="err_create_failed">Failed to create</string>
+    <string name="err_entry_missing">Item not found</string>
+    <string name="err_delete_failed">Failed to delete</string>
+    <string name="err_username_empty_colon">Username must not be empty and must not contain \":\"</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel">Server status</string>
+    <string name="notif_channel_desc">WebDAV server running state</string>
+    <string name="notif_starting">Starting…</string>
+    <string name="notif_start_failed">Failed to start: %1$s</string>
+    <string name="notif_running_title">DavSrv running</string>
+    <string name="notif_port_suffix">WebDAV · port %1$d</string>
+    <string name="notif_action_stop">Stop</string>
+    <string name="error_start_failed">Service failed to start</string>
+
+    <!-- WebDAV server responses (localized) -->
+    <string name="srv_err_create_file">Cannot create the file: the folder is not writable, storage permission is missing, or the file name is not supported</string>
+    <string name="srv_err_delete">Delete failed: the folder is not writable or the item is in use by the system or another app</string>
+    <string name="srv_err_exists">The collection already exists</string>
+    <string name="srv_err_mkcol">Cannot create the folder: the parent folder is not writable or the name is not supported</string>
+    <string name="srv_err_dest_missing">Missing Destination header</string>
+    <string name="srv_err_dest_unparsable">The Destination header cannot be parsed</string>
+    <string name="srv_err_dest_path_invalid">Invalid destination path</string>
+    <string name="srv_err_dest_name_invalid">Invalid destination name</string>
+    <string name="srv_err_same_path">Source and destination are the same</string>
+    <string name="srv_err_into_self">Cannot copy or move an item into itself</string>
+    <string name="srv_err_dest_parent_missing">The destination folder does not exist</string>
+    <string name="srv_err_dest_not_dir">The destination is not a folder</string>
+    <string name="srv_err_dest_exists">The destination already exists and overwriting is not allowed</string>
+    <string name="srv_err_file_over_dir">A file cannot overwrite a folder</string>
+    <string name="srv_err_overwrite_failed">An item with the same name exists at the destination and cannot be replaced</string>
+    <string name="srv_err_transfer">Move/copy failed: the destination folder is not writable or the name is not supported (the original was not modified)</string>
+    <string name="srv_err_lock_expired">The lock has expired</string>
+    <string name="srv_err_lock_token_missing">Missing Lock-Token</string>
+    <string name="srv_err_lock_not_found">The lock does not exist or has expired</string>
+    <string name="srv_err_start_failed">Failed to start</string>
+    <string name="srv_err_root_unavailable">The shared folder is unavailable: check the storage permission or choose the folder again</string>
+    <string name="srv_err_root_unavailable_short">Shared folder unavailable</string>
+    <string name="srv_err_internal">Server error: %1$s</string>
+    <string name="srv_err_readonly_account">This account is read-only and cannot modify files</string>
+    <string name="srv_hint_saf_readonly">The shared folder has no write permission: open DavSrv → Overview → Shared folder and choose the folder again</string>
+    <string name="srv_hint_path_readonly">Storage is read-only: grant “All files access” in Settings → Apps → DavSrv → Permissions, or switch to “Choose folder”</string>
+    <string name="srv_err_locked">The resource is locked</string>
+    <string name="srv_err_method">Method Not Allowed</string>
+    <string name="srv_err_not_found">Not Found</string>
+    <string name="srv_err_put_root">Cannot write to the server root</string>
+    <string name="srv_err_parent_missing">Parent folder not found</string>
+    <string name="srv_err_delete_root">Cannot delete the server root</string>
+    <string name="srv_err_transfer_root">Cannot copy or move the server root</string>
+    <string name="srv_err_unauthorized">Unauthorized</string>
+    <string name="srv_selftest_no_root">Shared folder unavailable, please authorize it again</string>
+    <string name="srv_selftest_no_create">Cannot create a file: write permission is missing</string>
+    <string name="srv_selftest_write_failed">Cannot write the file: %1$s</string>
+    <string name="srv_selftest_no_rename">Cannot rename: this storage does not support renaming</string>
+    <string name="srv_selftest_rename_lost">The file cannot be found after renaming</string>
+    <string name="srv_selftest_read_failed">Read failed: the written file cannot be read back</string>
+    <string name="srv_selftest_mismatch">Content mismatch after write (wrote %1$d bytes, read %2$d bytes)</string>
+    <string name="srv_selftest_denied">permission denied</string>
+    <string name="language_system">Follow system</string>
+    <string name="language_system_value">Follow system (%1$s)</string>
+
+
+    <!-- Built-in browser page -->
+    <string name="web_root">Root</string>
+    <string name="web_upload">Upload files</string>
+    <string name="web_new_folder">New folder</string>
+    <string name="web_items">%1$d items</string>
+    <string name="web_up">Up one level</string>
+    <string name="web_dir_items">%1$d items</string>
+    <string name="web_empty">This folder is empty</string>
+    <string name="web_footer">DavSrv · LAN WebDAV server</string>
+    <string name="web_free">Free %1$s of %2$s</string>
+    <string name="web_uploading">Uploading %1$s</string>
+    <string name="web_upload_failed">Upload failed: %1$s (%2$s)</string>
+    <string name="web_mkdir_prompt">New folder name</string>
+    <string name="web_create_failed">Create failed: %1$s</string>
+    <string name="web_downloading">Starting download…</string>
+
+</resources>

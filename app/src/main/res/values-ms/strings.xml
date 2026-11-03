@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DavSrv</string>
+
+    <!-- Tabs / status -->
+    <string name="tab_home">Ringkasan</string>
+    <string name="tab_files">Fail</string>
+    <string name="tab_users">Akaun</string>
+    <string name="tab_logs">Log</string>
+    <string name="tab_settings">Tetapan</string>
+    <string name="status_error">Ralat</string>
+    <string name="status_running">Berjalan</string>
+    <string name="status_stopped">Berhenti</string>
+
+    <!-- Home hero -->
+    <string name="server_running">Pelayan berjalan</string>
+    <string name="lan_hint">Boleh diakses daripada peranti pada rangkaian Wi-Fi yang sama</string>
+    <string name="action_qr">Kod QR</string>
+    <string name="action_copy">Salin alamat</string>
+    <string name="action_refresh_ip">Muat semula IP</string>
+    <string name="toast_copied">Alamat disalin</string>
+    <string name="action_stop">Hentikan pelayan</string>
+    <string name="server_stopped">Pelayan dihentikan</string>
+    <string name="server_stopped_hint">Mulakan pelayan untuk mengakses fail peranti ini daripada komputer atau peranti lain</string>
+    <string name="action_start">Mulakan pelayan WebDAV</string>
+    <string name="last_address">Alamat terakhir: %1$s</string>
+
+    <!-- Stats -->
+    <string name="stat_requests">Jumlah permintaan</string>
+    <string name="stat_uptime">Masa aktif</string>
+    <string name="stat_in">Diterima</string>
+    <string name="stat_out">Dihantar</string>
+    <string name="uptime_hm">%1$dj %2$dm</string>
+    <string name="uptime_ms">%1$dmin %2$ds</string>
+    <string name="uptime_s">%1$ds</string>
+
+    <!-- Warnings -->
+    <string name="warn_storage_title">Kebenaran storan diperlukan</string>
+    <string name="warn_storage_desc">Mod laluan memerlukan kebenaran untuk membaca dan menulis folder dikongsi. Anda juga boleh beralih ke “Pilih folder” (SAF) untuk keserasian lebih baik.</string>
+    <string name="action_grant">Benarkan</string>
+    <string name="warn_notif_title">Kebenaran pemberitahuan dimatikan</string>
+    <string name="warn_notif_desc">Pemberitahuan memastikan perkhidmatan latar hadapan kekal hidup dan menunjukkan alamat serta butang henti.</string>
+    <string name="action_enable_notif">Dayakan pemberitahuan</string>
+
+    <!-- Storage card -->
+    <string name="storage_card_title">Folder dikongsi</string>
+    <string name="access_rw">Baca dan tulis</string>
+    <string name="access_ro">Baca sahaja</string>
+    <string name="access_none">Tiada akses</string>
+    <string name="action_pick_folder">Pilih folder</string>
+    <string name="action_all_files">Akses semua fail</string>
+    <string name="action_self_test">Ujian kendiri storan</string>
+    <string name="hint_no_access_path">Kebenaran storan belum diberikan; folder dikongsi tidak boleh dibaca. Ketik “Akses semua fail” untuk membenarkan, atau beralih ke “Pilih folder” (SAF).</string>
+    <string name="hint_no_access_saf">Folder yang dipilih tidak lagi sah; sila benarkan semula melalui “Pilih folder”.</string>
+    <string name="hint_read_only_path">Baca sahaja: fail tidak boleh ditulis. Ketik “Akses semua fail” untuk membenarkan, jika tidak klien tidak boleh memuat naik, mengubah atau memadam fail.</string>
+    <string name="hint_read_only_saf">Baca sahaja: klien tidak akan dapat menulis. Pilih semula folder dalam “Pilih folder” dan berikan kebenaran baca dan tulis.</string>
+    <string name="self_test_ok">Ujian kendiri lulus: cipta, tulis, namakan semula dan padam semuanya berfungsi</string>
+
+    <!-- Connect card -->
+    <string name="how_to_connect">Cara menyambung</string>
+    <string name="client_windows">Windows</string>
+    <string name="client_windows_hint">File Explorer → Map network drive, masukkan alamat di atas</string>
+    <string name="client_macos">macOS</string>
+    <string name="client_macos_hint">Finder → Go → Connect to Server (⌘K)</string>
+    <string name="client_ios">iOS / iPadOS</string>
+    <string name="client_ios_hint">Apl Files → Connect to Server</string>
+    <string name="client_android">Android</string>
+    <string name="client_android_hint">Mana-mana pengurus fail yang menyokong WebDAV, tambah akaun</string>
+    <string name="connect_footer">Menyokong pengesahan HTTP Basic, kunci tulis dan sambung semula Range</string>
+
+    <!-- QR sheet -->
+    <string name="qr_title">Imbas untuk menyambung</string>
+    <string name="qr_hint">Imbas kod dengan klien WebDAV pada telefon</string>
+    <string name="qr_cd">Kod QR alamat pelayan</string>
+    <string name="qr_no_network">Tiada sambungan rangkaian; kod QR tidak dapat dijana</string>
+    <string name="qr_account_hint">Lihat halaman “Akaun” untuk kelayakan</string>
+    <string name="qr_map_hint">Petua: Windows / macOS boleh “Map network drive” terus</string>
+
+    <!-- Files -->
+    <string name="cd_up">Naik satu tahap</string>
+    <string name="cd_new_folder">Folder baharu</string>
+    <string name="cd_refresh">Muat semula</string>
+    <string name="action_retry">Cuba lagi</string>
+    <string name="empty_folder">Folder ini kosong</string>
+    <string name="label_folder">Folder</string>
+    <string name="cd_delete">Padam</string>
+    <string name="new_folder_title">Folder baharu</string>
+    <string name="label_name">Nama</string>
+    <string name="action_create">Cipta</string>
+    <string name="action_cancel">Batal</string>
+    <string name="delete_confirm_title">Sahkan padam</string>
+    <string name="delete_confirm_text">Padam “%1$s” secara kekal? Tindakan ini tidak boleh dibatalkan.</string>
+
+    <!-- Users -->
+    <string name="users_card_title">Akaun akses</string>
+    <string name="users_card_desc">Semua klien mengesahkan melalui HTTP Basic dengan akaun ini. Akaun lalai ialah root / 1234 — tukar kata laluan segera.</string>
+    <string name="action_add_account">Tambah akaun</string>
+    <string name="delete_account_title">Padam akaun</string>
+    <string name="delete_account_text">Padam akaun “%1$s”? Klien yang bersambung akan segera kehilangan akses.</string>
+    <string name="badge_read_only">Baca sahaja</string>
+    <string name="badge_read_write">Baca dan tulis</string>
+    <string name="cd_edit">Edit</string>
+    <string name="add_account_title">Tambah akaun</string>
+    <string name="edit_account_title">Edit akaun</string>
+    <string name="label_username">Nama pengguna</string>
+    <string name="label_password">Kata laluan</string>
+    <string name="label_new_password">Kata laluan baharu (biarkan kosong untuk kekalkan)</string>
+    <string name="label_read_only_account">Akaun baca sahaja</string>
+    <string name="read_only_desc">Hanya boleh melayari dan memuat turun; fail tidak boleh diubah</string>
+    <string name="err_username_required">Masukkan nama pengguna</string>
+    <string name="err_password_short">Kata laluan mesti sekurang-kurangnya 4 aksara</string>
+    <string name="err_password_required">Sila tetapkan kata laluan</string>
+    <string name="action_save">Simpan</string>
+
+    <!-- Logs -->
+    <string name="logs_recent">%1$d permintaan terkini</string>
+    <string name="action_clear">Kosongkan</string>
+    <string name="logs_empty_title">Belum ada permintaan</string>
+    <string name="logs_empty_desc">Setiap permintaan klien akan muncul di sini selepas bersambung</string>
+
+    <!-- Settings -->
+    <string name="section_server">Pelayan</string>
+    <string name="label_port">Port</string>
+    <string name="err_port_range">Port mesti 1024 - 65535</string>
+    <string name="action_save_port">Simpan port</string>
+    <string name="port_restart_hint">Pelayan dimulakan semula secara automatik selepas perubahan</string>
+    <string name="section_storage">Storan</string>
+    <string name="current_shared_folder">Folder dikongsi semasa</string>
+    <string name="action_request_storage">Kebenaran storan</string>
+    <string name="path_mode_hint">Atau tentukan laluan terus (lebih pantas, tetapi perlu kebenaran storan)</string>
+    <string name="label_shared_path">Laluan dikongsi</string>
+    <string name="action_use_path">Gunakan laluan ini</string>
+    <string name="no_permission">Tiada kebenaran</string>
+    <string name="section_runtime">Masa jalan dan bateri</string>
+    <string name="pref_boot_title">Mula semasa but</string>
+    <string name="pref_boot_desc">Mulakan semula perkhidmatan secara automatik selepas peranti dihidupkan semula</string>
+    <string name="pref_wifi_title">Kekalkan Wi-Fi aktif</string>
+    <string name="pref_wifi_desc">Lebih stabil untuk pemindahan besar; penggunaan bateri sedikit lebih tinggi</string>
+    <string name="pref_hidden_title">Tunjukkan fail tersembunyi</string>
+    <string name="pref_hidden_desc">Fail dan folder yang bermula dengan titik</string>
+    <string name="section_language">Bahasa</string>
+    <string name="pref_language_title">Bahasa aplikasi</string>
+    <string name="section_about">Perihal</string>
+    <string name="about_name">Nama aplikasi</string>
+    <string name="about_version">Versi</string>
+    <string name="about_package">Pakej</string>
+    <string name="about_protocol">Protokol</string>
+    <string name="about_support">Sokongan sistem</string>
+    <string name="about_desc">DavSrv ialah pelayan WebDAV LAN yang ringan: mulakan perkhidmatan latar hadapan dan peranti lain boleh membaca serta menulis fail peranti ini melalui Wi-Fi. Tiada CPU wake lock dipegang semasa berjalan; penggunaan kuasa melahu hampir sifar.</string>
+    <string name="default_account_hint">Akaun lalai root / 1234 — tukar kata laluan di halaman “Akaun”</string>
+
+    <!-- ViewModel / errors -->
+    <string name="err_root_unavailable_check">Akar storan tidak tersedia; semak kebenaran atau pilih semula folder</string>
+    <string name="err_dir_missing">Direktori tidak dijumpai</string>
+    <string name="err_not_a_dir">Bukan direktori</string>
+    <string name="err_read_failed">Gagal membaca</string>
+    <string name="err_name_invalid">Nama tidak sah</string>
+    <string name="err_root_unavailable">Akar storan tidak tersedia</string>
+    <string name="err_exists">Item dengan nama ini sudah wujud</string>
+    <string name="err_create_failed">Gagal mencipta</string>
+    <string name="err_entry_missing">Item tidak dijumpai</string>
+    <string name="err_delete_failed">Gagal memadam</string>
+    <string name="err_username_empty_colon">Nama pengguna tidak boleh kosong dan tidak boleh mengandungi “:”</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel">Status pelayan</string>
+    <string name="notif_channel_desc">Keadaan pelayan WebDAV</string>
+    <string name="notif_starting">Memulakan…</string>
+    <string name="notif_start_failed">Gagal memulakan: %1$s</string>
+    <string name="notif_running_title">DavSrv berjalan</string>
+    <string name="notif_port_suffix">WebDAV · port %1$d</string>
+    <string name="notif_action_stop">Hentikan</string>
+    <string name="error_start_failed">Perkhidmatan gagal dimulakan</string>
+
+    <!-- WebDAV server responses (localized) -->
+    <string name="srv_err_create_file">Tidak dapat mencipta fail: folder tidak boleh ditulis, kebenaran storan tiada, atau nama fail tidak disokong</string>
+    <string name="srv_err_delete">Gagal memadam: folder tidak boleh ditulis atau item sedang digunakan oleh sistem atau aplikasi lain</string>
+    <string name="srv_err_exists">Koleksi sudah wujud</string>
+    <string name="srv_err_mkcol">Tidak dapat mencipta folder: folder induk tidak boleh ditulis atau nama tidak disokong</string>
+    <string name="srv_err_dest_missing">Pengepala Destination tiada</string>
+    <string name="srv_err_dest_unparsable">Pengepala Destination tidak dapat dihuraikan</string>
+    <string name="srv_err_dest_path_invalid">Laluan destinasi tidak sah</string>
+    <string name="srv_err_dest_name_invalid">Nama destinasi tidak sah</string>
+    <string name="srv_err_same_path">Sumber dan destinasi adalah sama</string>
+    <string name="srv_err_into_self">Tidak boleh menyalin atau memindahkan item ke dalam dirinya sendiri</string>
+    <string name="srv_err_dest_parent_missing">Folder destinasi tidak wujud</string>
+    <string name="srv_err_dest_not_dir">Destinasi bukan folder</string>
+    <string name="srv_err_dest_exists">Destinasi sudah wujud dan penimpaan tidak dibenarkan</string>
+    <string name="srv_err_file_over_dir">Fail tidak boleh menimpa folder</string>
+    <string name="srv_err_overwrite_failed">Item dengan nama sama wujud di destinasi dan tidak boleh diganti</string>
+    <string name="srv_err_transfer">Pindah/salin gagal: folder destinasi tidak boleh ditulis atau nama tidak disokong (fail asal tidak diubah)</string>
+    <string name="srv_err_lock_expired">Kunci telah tamat tempoh</string>
+    <string name="srv_err_lock_token_missing">Lock-Token tiada</string>
+    <string name="srv_err_lock_not_found">Kunci tidak wujud atau telah tamat tempoh</string>
+    <string name="srv_err_start_failed">Gagal memulakan</string>
+    <string name="srv_err_root_unavailable">Folder dikongsi tidak tersedia: semak kebenaran storan atau pilih folder semula</string>
+    <string name="srv_err_root_unavailable_short">Folder dikongsi tidak tersedia</string>
+    <string name="srv_err_internal">Ralat pelayan: %1$s</string>
+    <string name="srv_err_readonly_account">Akaun ini baca sahaja dan tidak boleh mengubah fail</string>
+    <string name="srv_hint_saf_readonly">Folder dikongsi tiada kebenaran tulis: buka DavSrv → Ringkasan → Folder dikongsi dan pilih folder semula</string>
+    <string name="srv_hint_path_readonly">Storan adalah baca sahaja: berikan “Akses semua fail” dalam Tetapan → Apl → DavSrv → Kebenaran, atau beralih ke “Pilih folder”</string>
+    <string name="srv_err_locked">Sumber dikunci</string>
+    <string name="srv_err_method">Kaedah tidak dibenarkan</string>
+    <string name="srv_err_not_found">Tidak dijumpai</string>
+    <string name="srv_err_put_root">Tidak boleh menulis ke akar pelayan</string>
+    <string name="srv_err_parent_missing">Folder induk tidak dijumpai</string>
+    <string name="srv_err_delete_root">Tidak boleh memadam akar pelayan</string>
+    <string name="srv_err_transfer_root">Tidak boleh menyalin atau memindahkan akar pelayan</string>
+    <string name="srv_err_unauthorized">Tidak dibenarkan</string>
+    <string name="srv_selftest_no_root">Folder dikongsi tidak tersedia, sila benarkan semula</string>
+    <string name="srv_selftest_no_create">Tidak boleh mencipta fail: kebenaran tulis tiada</string>
+    <string name="srv_selftest_write_failed">Tidak boleh menulis fail: %1$s</string>
+    <string name="srv_selftest_no_rename">Tidak boleh menamakan semula: storan ini tidak menyokong penamaan semula</string>
+    <string name="srv_selftest_rename_lost">Fail tidak dijumpai selepas penamaan semula</string>
+    <string name="srv_selftest_read_failed">Gagal membaca: fail yang ditulis tidak dapat dibaca semula</string>
+    <string name="srv_selftest_mismatch">Kandungan tidak sepadan selepas menulis (%1$d bait ditulis, %2$d bait dibaca)</string>
+    <string name="srv_selftest_denied">kebenaran ditolak</string>
+    <string name="language_system">Ikut sistem</string>
+    <string name="language_system_value">Ikut sistem (%1$s)</string>
+
+
+    <!-- Built-in browser page -->
+    <string name="web_root">Akar</string>
+    <string name="web_upload">Muat naik fail</string>
+    <string name="web_new_folder">Folder baharu</string>
+    <string name="web_items">%1$d item</string>
+    <string name="web_up">Naik satu tahap</string>
+    <string name="web_dir_items">%1$d item</string>
+    <string name="web_empty">Folder ini kosong</string>
+    <string name="web_footer">DavSrv · pelayan WebDAV LAN</string>
+    <string name="web_free">Kosong %1$s daripada %2$s</string>
+    <string name="web_uploading">Memuat naik %1$s</string>
+    <string name="web_upload_failed">Muat naik gagal: %1$s (%2$s)</string>
+    <string name="web_mkdir_prompt">Nama folder baharu</string>
+    <string name="web_create_failed">Gagal mencipta: %1$s</string>
+    <string name="web_downloading">Memulakan muat turun…</string>
+
+</resources>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DavSrv</string>
+
+    <!-- Tabs / status -->
+    <string name="tab_home">अवलोकन</string>
+    <string name="tab_files">फ़ाइलें</string>
+    <string name="tab_users">खाते</string>
+    <string name="tab_logs">लॉग</string>
+    <string name="tab_settings">सेटिंग्स</string>
+    <string name="status_error">त्रुटि</string>
+    <string name="status_running">चल रहा है</string>
+    <string name="status_stopped">बंद</string>
+
+    <!-- Home hero -->
+    <string name="server_running">सर्वर चल रहा है</string>
+    <string name="lan_hint">उसी Wi-Fi नेटवर्क के डिवाइस से एक्सेस करें</string>
+    <string name="action_qr">QR कोड</string>
+    <string name="action_copy">पता कॉपी करें</string>
+    <string name="action_refresh_ip">IP रीफ़्रेश करें</string>
+    <string name="toast_copied">पता कॉपी हो गया</string>
+    <string name="action_stop">सर्वर बंद करें</string>
+    <string name="server_stopped">सर्वर बंद है</string>
+    <string name="server_stopped_hint">कंप्यूटर या अन्य डिवाइस से इस डिवाइस की फ़ाइलें खोलने के लिए सर्वर शुरू करें</string>
+    <string name="action_start">WebDAV सर्वर शुरू करें</string>
+    <string name="last_address">अंतिम पता: %1$s</string>
+
+    <!-- Stats -->
+    <string name="stat_requests">कुल अनुरोध</string>
+    <string name="stat_uptime">अपटाइम</string>
+    <string name="stat_in">प्राप्त</string>
+    <string name="stat_out">भेजा गया</string>
+    <string name="uptime_hm">%1$d घं %2$d मि</string>
+    <string name="uptime_ms">%1$d मि %2$d से</string>
+    <string name="uptime_s">%1$d से</string>
+
+    <!-- Warnings -->
+    <string name="warn_storage_title">स्टोरेज अनुमति आवश्यक है</string>
+    <string name="warn_storage_desc">पाथ मोड में साझा फ़ोल्डर पढ़ने-लिखने की अनुमति चाहिए। बेहतर संगतता के लिए आप “फ़ोल्डर चुनें” (SAF) भी चुन सकते हैं।</string>
+    <string name="action_grant">अनुमति दें</string>
+    <string name="warn_notif_title">सूचना अनुमति बंद है</string>
+    <string name="warn_notif_desc">सूचनाएँ फ़ोरग्राउंड सेवा को जीवित रखती हैं और पता तथा बंद करने का बटन दिखाती हैं।</string>
+    <string name="action_enable_notif">सूचनाएँ चालू करें</string>
+
+    <!-- Storage card -->
+    <string name="storage_card_title">साझा फ़ोल्डर</string>
+    <string name="access_rw">पढ़ें और लिखें</string>
+    <string name="access_ro">केवल पढ़ें</string>
+    <string name="access_none">कोई पहुँच नहीं</string>
+    <string name="action_pick_folder">फ़ोल्डर चुनें</string>
+    <string name="action_all_files">सभी फ़ाइलों तक पहुँच</string>
+    <string name="action_self_test">स्टोरेज स्व-जाँच</string>
+    <string name="hint_no_access_path">स्टोरेज अनुमति नहीं दी गई है, साझा फ़ोल्डर पढ़ा नहीं जा सकता। अनुमति देने के लिए “सभी फ़ाइलों तक पहुँच” दबाएँ, या “फ़ोल्डर चुनें” (SAF) पर जाएँ।</string>
+    <string name="hint_no_access_saf">चुना गया फ़ोल्डर अब मान्य नहीं है; कृपया “फ़ोल्डर चुनें” से दोबारा अनुमति दें।</string>
+    <string name="hint_read_only_path">केवल पढ़ें: फ़ाइलें लिखी नहीं जा सकतीं। “सभी फ़ाइलों तक पहुँच” दबाकर अनुमति दें, वरना क्लाइंट अपलोड, बदलाव या हटाना नहीं कर सकेंगे।</string>
+    <string name="hint_read_only_saf">केवल पढ़ें: क्लाइंट लिख नहीं सकेंगे। “फ़ोल्डर चुनें” में फ़ोल्डर दोबारा चुनें और पढ़ने-लिखने की अनुमति दें।</string>
+    <string name="self_test_ok">स्व-जाँच सफल: बनाना, लिखना, नाम बदलना और हटाना सब काम कर रहे हैं</string>
+
+    <!-- Connect card -->
+    <string name="how_to_connect">कैसे कनेक्ट करें</string>
+    <string name="client_windows">Windows</string>
+    <string name="client_windows_hint">File Explorer → Map network drive, ऊपर दिया पता डालें</string>
+    <string name="client_macos">macOS</string>
+    <string name="client_macos_hint">Finder → Go → Connect to Server (⌘K)</string>
+    <string name="client_ios">iOS / iPadOS</string>
+    <string name="client_ios_hint">Files ऐप → Connect to Server</string>
+    <string name="client_android">Android</string>
+    <string name="client_android_hint">कोई भी WebDAV समर्थित फ़ाइल मैनेजर, खाता जोड़ें</string>
+    <string name="connect_footer">HTTP Basic प्रमाणीकरण, लेखन लॉक और Range रिज़्यूमे समर्थित</string>
+
+    <!-- QR sheet -->
+    <string name="qr_title">कनेक्ट करने के लिए स्कैन करें</string>
+    <string name="qr_hint">फ़ोन के WebDAV क्लाइंट से कोड स्कैन करें</string>
+    <string name="qr_cd">सर्वर पते का QR कोड</string>
+    <string name="qr_no_network">नेटवर्क कनेक्शन नहीं है; QR कोड नहीं बनाया जा सकता</string>
+    <string name="qr_account_hint">क्रेडेंशियल “खाते” पेज पर देखें</string>
+    <string name="qr_map_hint">सुझाव: Windows / macOS सीधे “Map network drive” कर सकते हैं</string>
+
+    <!-- Files -->
+    <string name="cd_up">एक स्तर ऊपर जाएँ</string>
+    <string name="cd_new_folder">नया फ़ोल्डर</string>
+    <string name="cd_refresh">रीफ़्रेश करें</string>
+    <string name="action_retry">फिर कोशिश करें</string>
+    <string name="empty_folder">यह फ़ोल्डर खाली है</string>
+    <string name="label_folder">फ़ोल्डर</string>
+    <string name="cd_delete">हटाएँ</string>
+    <string name="new_folder_title">नया फ़ोल्डर</string>
+    <string name="label_name">नाम</string>
+    <string name="action_create">बनाएँ</string>
+    <string name="action_cancel">रद्द करें</string>
+    <string name="delete_confirm_title">हटाने की पुष्टि करें</string>
+    <string name="delete_confirm_text">“%1$s” को स्थायी रूप से हटाएँ? इसे वापस नहीं लाया जा सकता।</string>
+
+    <!-- Users -->
+    <string name="users_card_title">एक्सेस खाते</string>
+    <string name="users_card_desc">सभी क्लाइंट HTTP Basic से इन खातों से प्रमाणित होते हैं। डिफ़ॉल्ट खाता root / 1234 है — पासवर्ड जल्द बदलें।</string>
+    <string name="action_add_account">खाता जोड़ें</string>
+    <string name="delete_account_title">खाता हटाएँ</string>
+    <string name="delete_account_text">खाता “%1$s” हटाएँ? जुड़े क्लाइंट तुरंत एक्सेस खो देंगे।</string>
+    <string name="badge_read_only">केवल पढ़ें</string>
+    <string name="badge_read_write">पढ़ें और लिखें</string>
+    <string name="cd_edit">संपादित करें</string>
+    <string name="add_account_title">खाता जोड़ें</string>
+    <string name="edit_account_title">खाता संपादित करें</string>
+    <string name="label_username">उपयोगकर्ता नाम</string>
+    <string name="label_password">पासवर्ड</string>
+    <string name="label_new_password">नया पासवर्ड (वही रखने के लिए खाली छोड़ें)</string>
+    <string name="label_read_only_account">केवल पढ़ने वाला खाता</string>
+    <string name="read_only_desc">केवल ब्राउज़ और डाउनलोड कर सकते हैं; फ़ाइलें बदली नहीं जा सकतीं</string>
+    <string name="err_username_required">कृपया उपयोगकर्ता नाम डालें</string>
+    <string name="err_password_short">पासवर्ड कम से कम 4 अक्षर का होना चाहिए</string>
+    <string name="err_password_required">कृपया पासवर्ड सेट करें</string>
+    <string name="action_save">सहेजें</string>
+
+    <!-- Logs -->
+    <string name="logs_recent">%1$d हाल के अनुरोध</string>
+    <string name="action_clear">साफ़ करें</string>
+    <string name="logs_empty_title">अभी कोई अनुरोध नहीं</string>
+    <string name="logs_empty_desc">कनेक्ट होने के बाद हर क्लाइंट अनुरोध यहाँ दिखेगा</string>
+
+    <!-- Settings -->
+    <string name="section_server">सर्वर</string>
+    <string name="label_port">पोर्ट</string>
+    <string name="err_port_range">पोर्ट 1024 - 65535 के बीच होना चाहिए</string>
+    <string name="action_save_port">पोर्ट सहेजें</string>
+    <string name="port_restart_hint">बदलने के बाद सर्वर अपने आप फिर शुरू हो जाता है</string>
+    <string name="section_storage">स्टोरेज</string>
+    <string name="current_shared_folder">वर्तमान साझा फ़ोल्डर</string>
+    <string name="action_request_storage">स्टोरेज अनुमति</string>
+    <string name="path_mode_hint">या सीधे पाथ दें (तेज़, पर स्टोरेज अनुमति आवश्यक)</string>
+    <string name="label_shared_path">साझा पाथ</string>
+    <string name="action_use_path">यह पाथ इस्तेमाल करें</string>
+    <string name="no_permission">अनुमति नहीं</string>
+    <string name="section_runtime">रनटाइम और बैटरी</string>
+    <string name="pref_boot_title">बूट पर शुरू करें</string>
+    <string name="pref_boot_desc">डिवाइस रीबूट के बाद सेवा अपने आप फिर शुरू हो</string>
+    <string name="pref_wifi_title">Wi-Fi जगाए रखें</string>
+    <string name="pref_wifi_desc">बड़े ट्रांसफ़र के लिए अधिक स्थिर; बैटरी थोड़ी ज़्यादा लगती है</string>
+    <string name="pref_hidden_title">छिपी फ़ाइलें दिखाएँ</string>
+    <string name="pref_hidden_desc">डॉट से शुरू होने वाली फ़ाइलें और फ़ोल्डर</string>
+    <string name="section_language">भाषा</string>
+    <string name="pref_language_title">ऐप की भाषा</string>
+    <string name="section_about">परिचय</string>
+    <string name="about_name">ऐप का नाम</string>
+    <string name="about_version">संस्करण</string>
+    <string name="about_package">पैकेज</string>
+    <string name="about_protocol">प्रोटोकॉल</string>
+    <string name="about_support">सिस्टम समर्थन</string>
+    <string name="about_desc">DavSrv एक हल्का LAN WebDAV सर्वर है: फ़ोरग्राउंड सेवा शुरू करें और अन्य डिवाइस Wi-Fi से इस डिवाइस की फ़ाइलें पढ़-लिख सकते हैं। रनटाइम में कोई CPU wake lock नहीं रखा जाता; निष्क्रिय बिजली खपत लगभग शून्य है।</string>
+    <string name="default_account_hint">डिफ़ॉल्ट खाता root / 1234 — “खाते” पेज पर पासवर्ड बदलें</string>
+
+    <!-- ViewModel / errors -->
+    <string name="err_root_unavailable_check">स्टोरेज रूट उपलब्ध नहीं; अनुमति जाँचें या फ़ोल्डर दोबारा चुनें</string>
+    <string name="err_dir_missing">निर्देशिका नहीं मिली</string>
+    <string name="err_not_a_dir">यह निर्देशिका नहीं है</string>
+    <string name="err_read_failed">पढ़ने में विफल</string>
+    <string name="err_name_invalid">अमान्य नाम</string>
+    <string name="err_root_unavailable">स्टोरेज रूट उपलब्ध नहीं</string>
+    <string name="err_exists">इस नाम का आइटम पहले से मौजूद है</string>
+    <string name="err_create_failed">बनाने में विफल</string>
+    <string name="err_entry_missing">आइटम नहीं मिला</string>
+    <string name="err_delete_failed">हटाने में विफल</string>
+    <string name="err_username_empty_colon">उपयोगकर्ता नाम खाली नहीं हो सकता और उसमें “:” नहीं हो सकता</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel">सर्वर स्थिति</string>
+    <string name="notif_channel_desc">WebDAV सर्वर की चलने की स्थिति</string>
+    <string name="notif_starting">शुरू हो रहा है…</string>
+    <string name="notif_start_failed">शुरू करने में विफल: %1$s</string>
+    <string name="notif_running_title">DavSrv चल रहा है</string>
+    <string name="notif_port_suffix">WebDAV · पोर्ट %1$d</string>
+    <string name="notif_action_stop">बंद करें</string>
+    <string name="error_start_failed">सेवा शुरू नहीं हो सकी</string>
+
+    <!-- WebDAV server responses (localized) -->
+    <string name="srv_err_create_file">फ़ाइल नहीं बनाई जा सकी: फ़ोल्डर लिखने योग्य नहीं है, स्टोरेज अनुमति नहीं है या फ़ाइल नाम समर्थित नहीं है</string>
+    <string name="srv_err_delete">हटाने में विफल: फ़ोल्डर लिखने योग्य नहीं है या आइटम सिस्टम या किसी अन्य ऐप द्वारा उपयोग में है</string>
+    <string name="srv_err_exists">संग्रह पहले से मौजूद है</string>
+    <string name="srv_err_mkcol">फ़ोल्डर नहीं बनाया जा सका: मूल फ़ोल्डर लिखने योग्य नहीं है या नाम समर्थित नहीं है</string>
+    <string name="srv_err_dest_missing">Destination हेडर नहीं मिला</string>
+    <string name="srv_err_dest_unparsable">Destination हेडर पढ़ा नहीं जा सका</string>
+    <string name="srv_err_dest_path_invalid">गंतव्य पाथ अमान्य है</string>
+    <string name="srv_err_dest_name_invalid">गंतव्य नाम अमान्य है</string>
+    <string name="srv_err_same_path">स्रोत और गंतव्य एक ही हैं</string>
+    <string name="srv_err_into_self">किसी आइटम को उसी के अंदर कॉपी या मूव नहीं किया जा सकता</string>
+    <string name="srv_err_dest_parent_missing">गंतव्य फ़ोल्डर मौजूद नहीं है</string>
+    <string name="srv_err_dest_not_dir">गंतव्य फ़ोल्डर नहीं है</string>
+    <string name="srv_err_dest_exists">गंतव्य पहले से मौजूद है और ऊपर लिखने की अनुमति नहीं है</string>
+    <string name="srv_err_file_over_dir">फ़ाइल फ़ोल्डर को ओवरराइट नहीं कर सकती</string>
+    <string name="srv_err_overwrite_failed">गंतव्य पर इसी नाम का आइटम है और उसे बदला नहीं जा सका</string>
+    <string name="srv_err_transfer">मूव/कॉपी विफल: गंतव्य फ़ोल्डर लिखने योग्य नहीं है या नाम समर्थित नहीं है (मूल फ़ाइल अपरिवर्तित है)</string>
+    <string name="srv_err_lock_expired">लॉक की अवधि समाप्त हो गई</string>
+    <string name="srv_err_lock_token_missing">Lock-Token नहीं मिला</string>
+    <string name="srv_err_lock_not_found">लॉक मौजूद नहीं है या समाप्त हो गया</string>
+    <string name="srv_err_start_failed">शुरू करने में विफल</string>
+    <string name="srv_err_root_unavailable">साझा फ़ोल्डर उपलब्ध नहीं है: स्टोरेज अनुमति जाँचें या फ़ोल्डर दोबारा चुनें</string>
+    <string name="srv_err_root_unavailable_short">साझा फ़ोल्डर उपलब्ध नहीं है</string>
+    <string name="srv_err_internal">सर्वर त्रुटि: %1$s</string>
+    <string name="srv_err_readonly_account">यह खाता केवल पढ़ने योग्य है और फ़ाइलें नहीं बदल सकता</string>
+    <string name="srv_hint_saf_readonly">साझा फ़ोल्डर में लिखने की अनुमति नहीं है: DavSrv → अवलोकन → साझा फ़ोल्डर खोलकर फ़ोल्डर दोबारा चुनें</string>
+    <string name="srv_hint_path_readonly">स्टोरेज केवल पढ़ने योग्य है: सेटिंग्स → ऐप्स → DavSrv → अनुमतियाँ में “सभी फ़ाइलों तक पहुँच” दें, या “फ़ोल्डर चुनें” पर जाएँ</string>
+    <string name="srv_err_locked">संसाधन लॉक है</string>
+    <string name="srv_err_method">विधि की अनुमति नहीं है</string>
+    <string name="srv_err_not_found">नहीं मिला</string>
+    <string name="srv_err_put_root">सर्वर रूट पर नहीं लिखा जा सकता</string>
+    <string name="srv_err_parent_missing">मूल फ़ोल्डर नहीं मिला</string>
+    <string name="srv_err_delete_root">सर्वर रूट नहीं हटाया जा सकता</string>
+    <string name="srv_err_transfer_root">सर्वर रूट कॉपी या मूव नहीं किया जा सकता</string>
+    <string name="srv_err_unauthorized">अनधिकृत</string>
+    <string name="srv_selftest_no_root">साझा फ़ोल्डर उपलब्ध नहीं है, कृपया दोबारा अनुमति दें</string>
+    <string name="srv_selftest_no_create">फ़ाइल नहीं बनाई जा सकती: लिखने की अनुमति नहीं है</string>
+    <string name="srv_selftest_write_failed">फ़ाइल नहीं लिखी जा सकी: %1$s</string>
+    <string name="srv_selftest_no_rename">नाम नहीं बदला जा सका: यह स्टोरेज नाम बदलना समर्थित नहीं करता</string>
+    <string name="srv_selftest_rename_lost">नाम बदलने के बाद फ़ाइल नहीं मिली</string>
+    <string name="srv_selftest_read_failed">पढ़ने में विफल: लिखी गई फ़ाइल वापस नहीं पढ़ी जा सकी</string>
+    <string name="srv_selftest_mismatch">लिखने के बाद सामग्री मेल नहीं खाती (%1$d बाइट लिखे, %2$d बाइट पढ़े)</string>
+    <string name="srv_selftest_denied">अनुमति नहीं है</string>
+    <string name="language_system">सिस्टम के अनुसार</string>
+    <string name="language_system_value">सिस्टम के अनुसार (%1$s)</string>
+
+
+    <!-- Built-in browser page -->
+    <string name="web_root">रूट</string>
+    <string name="web_upload">फ़ाइलें अपलोड करें</string>
+    <string name="web_new_folder">नया फ़ोल्डर</string>
+    <string name="web_items">%1$d आइटम</string>
+    <string name="web_up">एक स्तर ऊपर</string>
+    <string name="web_dir_items">%1$d आइटम</string>
+    <string name="web_empty">यह फ़ोल्डर खाली है</string>
+    <string name="web_footer">DavSrv · LAN WebDAV सर्वर</string>
+    <string name="web_free">%2$s में से %1$s खाली</string>
+    <string name="web_uploading">%1$s अपलोड हो रहा है</string>
+    <string name="web_upload_failed">अपलोड विफल: %1$s (%2$s)</string>
+    <string name="web_mkdir_prompt">नए फ़ोल्डर का नाम</string>
+    <string name="web_create_failed">बनाने में विफल: %1$s</string>
+    <string name="web_downloading">डाउनलोड शुरू हो रहा है…</string>
+
+</resources>

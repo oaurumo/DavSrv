@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DavSrv</string>
+
+    <!-- Tabs / status -->
+    <string name="tab_home">Visão geral</string>
+    <string name="tab_files">Arquivos</string>
+    <string name="tab_users">Contas</string>
+    <string name="tab_logs">Registros</string>
+    <string name="tab_settings">Configurações</string>
+    <string name="status_error">Erro</string>
+    <string name="status_running">Em execução</string>
+    <string name="status_stopped">Parado</string>
+
+    <!-- Home hero -->
+    <string name="server_running">Servidor em execução</string>
+    <string name="lan_hint">Acessível de dispositivos na mesma rede Wi-Fi</string>
+    <string name="action_qr">Código QR</string>
+    <string name="action_copy">Copiar endereço</string>
+    <string name="action_refresh_ip">Atualizar IP</string>
+    <string name="toast_copied">Endereço copiado</string>
+    <string name="action_stop">Parar servidor</string>
+    <string name="server_stopped">Servidor parado</string>
+    <string name="server_stopped_hint">Inicie o servidor para acessar os arquivos deste dispositivo pelo computador ou outros dispositivos</string>
+    <string name="action_start">Iniciar servidor WebDAV</string>
+    <string name="last_address">Último endereço: %1$s</string>
+
+    <!-- Stats -->
+    <string name="stat_requests">Total de requisições</string>
+    <string name="stat_uptime">Tempo ativo</string>
+    <string name="stat_in">Recebido</string>
+    <string name="stat_out">Enviado</string>
+    <string name="uptime_hm">%1$dh %2$dmin</string>
+    <string name="uptime_ms">%1$dmin %2$ds</string>
+    <string name="uptime_s">%1$ds</string>
+
+    <!-- Warnings -->
+    <string name="warn_storage_title">Permissão de armazenamento necessária</string>
+    <string name="warn_storage_desc">O modo caminho precisa de permissão para ler e gravar na pasta compartilhada. Você também pode usar “Escolher pasta” (SAF) para maior compatibilidade.</string>
+    <string name="action_grant">Conceder</string>
+    <string name="warn_notif_title">Permissão de notificações desativada</string>
+    <string name="warn_notif_desc">As notificações mantêm o serviço em primeiro plano ativo e mostram o endereço e um botão de parar.</string>
+    <string name="action_enable_notif">Ativar notificações</string>
+
+    <!-- Storage card -->
+    <string name="storage_card_title">Pasta compartilhada</string>
+    <string name="access_rw">Leitura e gravação</string>
+    <string name="access_ro">Somente leitura</string>
+    <string name="access_none">Sem acesso</string>
+    <string name="action_pick_folder">Escolher pasta</string>
+    <string name="action_all_files">Acesso a todos os arquivos</string>
+    <string name="action_self_test">Autoteste de armazenamento</string>
+    <string name="hint_no_access_path">A permissão de armazenamento ainda não foi concedida; a pasta compartilhada não pode ser lida. Toque em “Acesso a todos os arquivos” para autorizar ou use “Escolher pasta” (SAF).</string>
+    <string name="hint_no_access_saf">A pasta selecionada não é mais válida; autorize novamente em “Escolher pasta”.</string>
+    <string name="hint_read_only_path">Somente leitura: não é possível gravar arquivos. Toque em “Acesso a todos os arquivos” para conceder, caso contrário os clientes não poderão enviar, alterar ou excluir arquivos.</string>
+    <string name="hint_read_only_saf">Somente leitura: os clientes não conseguirão gravar. Selecione a pasta novamente em “Escolher pasta” e conceda permissão de leitura e gravação.</string>
+    <string name="self_test_ok">Autoteste aprovado: criar, gravar, renomear e excluir funcionam</string>
+
+    <!-- Connect card -->
+    <string name="how_to_connect">Como conectar</string>
+    <string name="client_windows">Windows</string>
+    <string name="client_windows_hint">Explorador de Arquivos → Mapear unidade de rede, insira o endereço acima</string>
+    <string name="client_macos">macOS</string>
+    <string name="client_macos_hint">Finder → Ir → Conectar ao servidor (⌘K)</string>
+    <string name="client_ios">iOS / iPadOS</string>
+    <string name="client_ios_hint">App Arquivos → Conectar ao servidor</string>
+    <string name="client_android">Android</string>
+    <string name="client_android_hint">Qualquer gerenciador de arquivos com WebDAV, adicione uma conta</string>
+    <string name="connect_footer">Suporta autenticação HTTP Basic, bloqueio de gravação e retomada por Range</string>
+
+    <!-- QR sheet -->
+    <string name="qr_title">Escaneie para conectar</string>
+    <string name="qr_hint">Escaneie o código com um cliente WebDAV no celular</string>
+    <string name="qr_cd">Código QR do endereço do servidor</string>
+    <string name="qr_no_network">Sem conexão de rede; não é possível gerar o código QR</string>
+    <string name="qr_account_hint">Veja a página “Contas” para as credenciais</string>
+    <string name="qr_map_hint">Dica: Windows / macOS podem usar “Mapear unidade de rede” diretamente</string>
+
+    <!-- Files -->
+    <string name="cd_up">Subir um nível</string>
+    <string name="cd_new_folder">Nova pasta</string>
+    <string name="cd_refresh">Atualizar</string>
+    <string name="action_retry">Tentar novamente</string>
+    <string name="empty_folder">Esta pasta está vazia</string>
+    <string name="label_folder">Pasta</string>
+    <string name="cd_delete">Excluir</string>
+    <string name="new_folder_title">Nova pasta</string>
+    <string name="label_name">Nome</string>
+    <string name="action_create">Criar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="delete_confirm_title">Confirmar exclusão</string>
+    <string name="delete_confirm_text">Excluir “%1$s” permanentemente? Isso não pode ser desfeito.</string>
+
+    <!-- Users -->
+    <string name="users_card_title">Contas de acesso</string>
+    <string name="users_card_desc">Todos os clientes se autenticam via HTTP Basic com estas contas. A conta padrão é root / 1234 — altere a senha em breve.</string>
+    <string name="action_add_account">Adicionar conta</string>
+    <string name="delete_account_title">Excluir conta</string>
+    <string name="delete_account_text">Excluir a conta “%1$s”? Os clientes conectados perderão o acesso imediatamente.</string>
+    <string name="badge_read_only">Somente leitura</string>
+    <string name="badge_read_write">Leitura e gravação</string>
+    <string name="cd_edit">Editar</string>
+    <string name="add_account_title">Adicionar conta</string>
+    <string name="edit_account_title">Editar conta</string>
+    <string name="label_username">Usuário</string>
+    <string name="label_password">Senha</string>
+    <string name="label_new_password">Nova senha (deixe em branco para manter)</string>
+    <string name="label_read_only_account">Conta somente leitura</string>
+    <string name="read_only_desc">Pode apenas navegar e baixar; os arquivos não podem ser modificados</string>
+    <string name="err_username_required">Informe um usuário</string>
+    <string name="err_password_short">A senha deve ter pelo menos 4 caracteres</string>
+    <string name="err_password_required">Defina uma senha</string>
+    <string name="action_save">Salvar</string>
+
+    <!-- Logs -->
+    <string name="logs_recent">%1$d requisições recentes</string>
+    <string name="action_clear">Limpar</string>
+    <string name="logs_empty_title">Nenhuma requisição ainda</string>
+    <string name="logs_empty_desc">Cada requisição de cliente aparecerá aqui após a conexão</string>
+
+    <!-- Settings -->
+    <string name="section_server">Servidor</string>
+    <string name="label_port">Porta</string>
+    <string name="err_port_range">A porta deve ser 1024 - 65535</string>
+    <string name="action_save_port">Salvar porta</string>
+    <string name="port_restart_hint">O servidor reinicia automaticamente após a alteração</string>
+    <string name="section_storage">Armazenamento</string>
+    <string name="current_shared_folder">Pasta compartilhada atual</string>
+    <string name="action_request_storage">Permissão de armazenamento</string>
+    <string name="path_mode_hint">Ou informe um caminho direto (mais rápido, mas requer permissão de armazenamento)</string>
+    <string name="label_shared_path">Caminho compartilhado</string>
+    <string name="action_use_path">Usar este caminho</string>
+    <string name="no_permission">Sem permissão</string>
+    <string name="section_runtime">Execução e bateria</string>
+    <string name="pref_boot_title">Iniciar na inicialização</string>
+    <string name="pref_boot_desc">Reinicia o serviço automaticamente após reiniciar o dispositivo</string>
+    <string name="pref_wifi_title">Manter Wi-Fi ativo</string>
+    <string name="pref_wifi_desc">Mais estável em transferências grandes; consumo de bateria um pouco maior</string>
+    <string name="pref_hidden_title">Mostrar arquivos ocultos</string>
+    <string name="pref_hidden_desc">Arquivos e pastas que começam com ponto</string>
+    <string name="section_language">Idioma</string>
+    <string name="pref_language_title">Idioma do app</string>
+    <string name="section_about">Sobre</string>
+    <string name="about_name">Nome do app</string>
+    <string name="about_version">Versão</string>
+    <string name="about_package">Pacote</string>
+    <string name="about_protocol">Protocolo</string>
+    <string name="about_support">Suporte do sistema</string>
+    <string name="about_desc">O DavSrv é um servidor WebDAV de LAN leve: inicie o serviço em primeiro plano e outros dispositivos poderão ler e gravar os arquivos deste dispositivo pelo Wi-Fi. Nenhum wake lock de CPU é mantido; o consumo em repouso é quase zero.</string>
+    <string name="default_account_hint">Conta padrão root / 1234 — altere a senha na página “Contas”</string>
+
+    <!-- ViewModel / errors -->
+    <string name="err_root_unavailable_check">Raiz de armazenamento indisponível; verifique a permissão ou selecione a pasta novamente</string>
+    <string name="err_dir_missing">Diretório não encontrado</string>
+    <string name="err_not_a_dir">Não é um diretório</string>
+    <string name="err_read_failed">Falha ao ler</string>
+    <string name="err_name_invalid">Nome inválido</string>
+    <string name="err_root_unavailable">Raiz de armazenamento indisponível</string>
+    <string name="err_exists">Já existe um item com este nome</string>
+    <string name="err_create_failed">Falha ao criar</string>
+    <string name="err_entry_missing">Item não encontrado</string>
+    <string name="err_delete_failed">Falha ao excluir</string>
+    <string name="err_username_empty_colon">O usuário não pode ficar vazio nem conter “:”</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel">Status do servidor</string>
+    <string name="notif_channel_desc">Estado de execução do servidor WebDAV</string>
+    <string name="notif_starting">Iniciando…</string>
+    <string name="notif_start_failed">Falha ao iniciar: %1$s</string>
+    <string name="notif_running_title">DavSrv em execução</string>
+    <string name="notif_port_suffix">WebDAV · porta %1$d</string>
+    <string name="notif_action_stop">Parar</string>
+    <string name="error_start_failed">O serviço não iniciou</string>
+
+    <!-- WebDAV server responses (localized) -->
+    <string name="srv_err_create_file">Não é possível criar o arquivo: a pasta não permite gravação, falta permissão de armazenamento ou o nome não é suportado</string>
+    <string name="srv_err_delete">Falha ao excluir: a pasta não permite gravação ou o item está em uso pelo sistema ou por outro app</string>
+    <string name="srv_err_exists">A coleção já existe</string>
+    <string name="srv_err_mkcol">Não é possível criar a pasta: a pasta pai não permite gravação ou o nome não é suportado</string>
+    <string name="srv_err_dest_missing">Cabeçalho Destination ausente</string>
+    <string name="srv_err_dest_unparsable">Não é possível interpretar o cabeçalho Destination</string>
+    <string name="srv_err_dest_path_invalid">Caminho de destino inválido</string>
+    <string name="srv_err_dest_name_invalid">Nome de destino inválido</string>
+    <string name="srv_err_same_path">Origem e destino são iguais</string>
+    <string name="srv_err_into_self">Não é possível copiar ou mover um item para dentro dele mesmo</string>
+    <string name="srv_err_dest_parent_missing">A pasta de destino não existe</string>
+    <string name="srv_err_dest_not_dir">O destino não é uma pasta</string>
+    <string name="srv_err_dest_exists">O destino já existe e a substituição não é permitida</string>
+    <string name="srv_err_file_over_dir">Um arquivo não pode substituir uma pasta</string>
+    <string name="srv_err_overwrite_failed">Já existe um item com o mesmo nome no destino e ele não pode ser substituído</string>
+    <string name="srv_err_transfer">Falha ao mover/copiar: a pasta de destino não permite gravação ou o nome não é suportado (o original não foi alterado)</string>
+    <string name="srv_err_lock_expired">O bloqueio expirou</string>
+    <string name="srv_err_lock_token_missing">Lock-Token ausente</string>
+    <string name="srv_err_lock_not_found">O bloqueio não existe ou expirou</string>
+    <string name="srv_err_start_failed">Falha ao iniciar</string>
+    <string name="srv_err_root_unavailable">A pasta compartilhada não está disponível: verifique a permissão de armazenamento ou escolha a pasta novamente</string>
+    <string name="srv_err_root_unavailable_short">Pasta compartilhada indisponível</string>
+    <string name="srv_err_internal">Erro do servidor: %1$s</string>
+    <string name="srv_err_readonly_account">Esta conta é somente leitura e não pode modificar arquivos</string>
+    <string name="srv_hint_saf_readonly">A pasta compartilhada não tem permissão de gravação: abra DavSrv → Visão geral → Pasta compartilhada e escolha a pasta novamente</string>
+    <string name="srv_hint_path_readonly">O armazenamento é somente leitura: conceda “Acesso a todos os arquivos” em Configurações → Apps → DavSrv → Permissões ou use “Escolher pasta”</string>
+    <string name="srv_err_locked">O recurso está bloqueado</string>
+    <string name="srv_err_method">Método não permitido</string>
+    <string name="srv_err_not_found">Não encontrado</string>
+    <string name="srv_err_put_root">Não é possível gravar na raiz do servidor</string>
+    <string name="srv_err_parent_missing">Pasta pai não encontrada</string>
+    <string name="srv_err_delete_root">Não é possível excluir a raiz do servidor</string>
+    <string name="srv_err_transfer_root">Não é possível copiar ou mover a raiz do servidor</string>
+    <string name="srv_err_unauthorized">Não autorizado</string>
+    <string name="srv_selftest_no_root">Pasta compartilhada indisponível, autorize novamente</string>
+    <string name="srv_selftest_no_create">Não é possível criar um arquivo: falta permissão de gravação</string>
+    <string name="srv_selftest_write_failed">Não é possível gravar o arquivo: %1$s</string>
+    <string name="srv_selftest_no_rename">Não é possível renomear: este armazenamento não suporta renomear</string>
+    <string name="srv_selftest_rename_lost">O arquivo não foi encontrado após renomear</string>
+    <string name="srv_selftest_read_failed">Falha na leitura: o arquivo gravado não pode ser lido de volta</string>
+    <string name="srv_selftest_mismatch">Conteúdo diferente após a gravação (%1$d bytes gravados, %2$d bytes lidos)</string>
+    <string name="srv_selftest_denied">permissão negada</string>
+    <string name="language_system">Seguir o sistema</string>
+    <string name="language_system_value">Seguir o sistema (%1$s)</string>
+
+
+    <!-- Built-in browser page -->
+    <string name="web_root">Raiz</string>
+    <string name="web_upload">Enviar arquivos</string>
+    <string name="web_new_folder">Nova pasta</string>
+    <string name="web_items">%1$d itens</string>
+    <string name="web_up">Subir um nível</string>
+    <string name="web_dir_items">%1$d itens</string>
+    <string name="web_empty">Esta pasta está vazia</string>
+    <string name="web_footer">DavSrv · servidor WebDAV de LAN</string>
+    <string name="web_free">Livre %1$s de %2$s</string>
+    <string name="web_uploading">Enviando %1$s</string>
+    <string name="web_upload_failed">Falha no envio: %1$s (%2$s)</string>
+    <string name="web_mkdir_prompt">Nome da nova pasta</string>
+    <string name="web_create_failed">Falha ao criar: %1$s</string>
+    <string name="web_downloading">Iniciando download…</string>
+
+</resources>

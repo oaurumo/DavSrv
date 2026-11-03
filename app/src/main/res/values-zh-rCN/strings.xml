@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DavSrv</string>
+
+    <!-- Tabs / status -->
+    <string name="tab_home">概览</string>
+    <string name="tab_files">文件</string>
+    <string name="tab_users">账号</string>
+    <string name="tab_logs">日志</string>
+    <string name="tab_settings">设置</string>
+    <string name="status_error">异常</string>
+    <string name="status_running">运行中</string>
+    <string name="status_stopped">已停止</string>
+
+    <!-- Home hero -->
+    <string name="server_running">服务运行中</string>
+    <string name="lan_hint">在同一局域网内的设备即可访问</string>
+    <string name="action_qr">二维码</string>
+    <string name="action_copy">复制地址</string>
+    <string name="action_refresh_ip">刷新 IP</string>
+    <string name="toast_copied">地址已复制</string>
+    <string name="action_stop">停止服务</string>
+    <string name="server_stopped">服务未启动</string>
+    <string name="server_stopped_hint">启动后即可在电脑或其它设备上访问本机文件</string>
+    <string name="action_start">启动 WebDAV 服务</string>
+    <string name="last_address">上次地址：%1$s</string>
+
+    <!-- Stats -->
+    <string name="stat_requests">请求总数</string>
+    <string name="stat_uptime">运行时长</string>
+    <string name="stat_in">已接收</string>
+    <string name="stat_out">已发送</string>
+    <string name="uptime_hm">%1$d时%2$d分</string>
+    <string name="uptime_ms">%1$d分%2$d秒</string>
+    <string name="uptime_s">%1$d秒</string>
+
+    <!-- Warnings -->
+    <string name="warn_storage_title">缺少存储权限</string>
+    <string name="warn_storage_desc">当前使用本机路径模式，需要授权后才能读写共享目录。也可以改用「选择文件夹」方式（SAF），兼容性更好。</string>
+    <string name="action_grant">前往授权</string>
+    <string name="warn_notif_title">通知权限未开启</string>
+    <string name="warn_notif_desc">开启通知后才能常驻后台运行，并在通知栏显示地址与停止按钮。</string>
+    <string name="action_enable_notif">开启通知</string>
+
+    <!-- Storage card -->
+    <string name="storage_card_title">共享目录</string>
+    <string name="access_rw">可读写</string>
+    <string name="access_ro">只读</string>
+    <string name="access_none">无权限</string>
+    <string name="action_pick_folder">选择文件夹</string>
+    <string name="action_all_files">全部文件访问</string>
+    <string name="action_self_test">存储自检</string>
+    <string name="hint_no_access_path">尚未获得存储权限，无法读取共享目录。点「全部文件访问」授权，或改用「选择文件夹」方式。</string>
+    <string name="hint_no_access_saf">所选目录已失效，请重新「选择文件夹」授权。</string>
+    <string name="hint_read_only_path">当前只能读取、不能写入：请点「全部文件访问」授予所有文件权限，否则电脑端无法上传/修改/删除文件。</string>
+    <string name="hint_read_only_saf">当前只读：电脑端将无法写入。请重新「选择文件夹」并授予读写权限。</string>
+    <string name="self_test_ok">存储自检通过：新建、写入、重命名、删除均正常</string>
+
+    <!-- Connect card -->
+    <string name="how_to_connect">如何连接</string>
+    <string name="client_windows">Windows</string>
+    <string name="client_windows_hint">资源管理器 → 映射网络驱动器，输入上方地址</string>
+    <string name="client_macos">macOS</string>
+    <string name="client_macos_hint">Finder → 前往 → 连接服务器（⌘K）</string>
+    <string name="client_ios">iOS / iPadOS</string>
+    <string name="client_ios_hint">「文件」App → 连接服务器</string>
+    <string name="client_android">Android</string>
+    <string name="client_android_hint">支持 WebDAV 的文件管理器，添加账号即可</string>
+    <string name="connect_footer">支持 HTTP Basic 认证、读写锁定与断点续传（Range）</string>
+
+    <!-- QR sheet -->
+    <string name="qr_title">扫码连接</string>
+    <string name="qr_hint">用手机上的 WebDAV 客户端扫描下方二维码</string>
+    <string name="qr_cd">服务器地址二维码</string>
+    <string name="qr_no_network">尚未连接网络，无法生成二维码</string>
+    <string name="qr_account_hint">账号密码请见「账号」页面</string>
+    <string name="qr_map_hint">提示：Windows / macOS 可直接「映射网络驱动器」</string>
+
+    <!-- Files -->
+    <string name="cd_up">上一级</string>
+    <string name="cd_new_folder">新建文件夹</string>
+    <string name="cd_refresh">刷新</string>
+    <string name="action_retry">重试</string>
+    <string name="empty_folder">这个文件夹是空的</string>
+    <string name="label_folder">文件夹</string>
+    <string name="cd_delete">删除</string>
+    <string name="new_folder_title">新建文件夹</string>
+    <string name="label_name">名称</string>
+    <string name="action_create">创建</string>
+    <string name="action_cancel">取消</string>
+    <string name="delete_confirm_title">删除确认</string>
+    <string name="delete_confirm_text">确定要永久删除「%1$s」吗？此操作不可撤销。</string>
+
+    <!-- Users -->
+    <string name="users_card_title">访问账号</string>
+    <string name="users_card_desc">所有客户端都通过这些账号进行 HTTP Basic 认证。默认账号为 root / 1234，请尽快修改密码。</string>
+    <string name="action_add_account">添加账号</string>
+    <string name="delete_account_title">删除账号</string>
+    <string name="delete_account_text">确定删除账号「%1$s」吗？相关客户端将立即无法连接。</string>
+    <string name="badge_read_only">只读</string>
+    <string name="badge_read_write">读写</string>
+    <string name="cd_edit">编辑</string>
+    <string name="add_account_title">添加账号</string>
+    <string name="edit_account_title">编辑账号</string>
+    <string name="label_username">用户名</string>
+    <string name="label_password">密码</string>
+    <string name="label_new_password">新密码（留空不修改）</string>
+    <string name="label_read_only_account">只读账号</string>
+    <string name="read_only_desc">只能浏览和下载，不能修改文件</string>
+    <string name="err_username_required">请输入用户名</string>
+    <string name="err_password_short">密码至少 4 位</string>
+    <string name="err_password_required">请设置密码</string>
+    <string name="action_save">保存</string>
+
+    <!-- Logs -->
+    <string name="logs_recent">最近 %1$d 条请求</string>
+    <string name="action_clear">清空</string>
+    <string name="logs_empty_title">暂无访问记录</string>
+    <string name="logs_empty_desc">客户端连接后，这里会显示每一次请求</string>
+
+    <!-- Settings -->
+    <string name="section_server">服务器</string>
+    <string name="label_port">端口</string>
+    <string name="err_port_range">端口范围 1024 - 65535</string>
+    <string name="action_save_port">保存端口</string>
+    <string name="port_restart_hint">修改后会自动重启服务</string>
+    <string name="section_storage">存储</string>
+    <string name="current_shared_folder">当前共享目录</string>
+    <string name="action_request_storage">申请存储权限</string>
+    <string name="path_mode_hint">或者直接指定路径（路径模式速度更快，但需要存储权限）</string>
+    <string name="label_shared_path">共享路径</string>
+    <string name="action_use_path">使用该路径</string>
+    <string name="no_permission">无权限</string>
+    <string name="section_runtime">运行与省电</string>
+    <string name="pref_boot_title">开机自动启动</string>
+    <string name="pref_boot_desc">设备重启后自动恢复服务</string>
+    <string name="pref_wifi_title">保持 Wi-Fi 唤醒</string>
+    <string name="pref_wifi_desc">传输大文件更稳定，会增加少量耗电</string>
+    <string name="pref_hidden_title">显示隐藏文件</string>
+    <string name="pref_hidden_desc">以 . 开头的文件与文件夹</string>
+    <string name="section_language">语言</string>
+    <string name="pref_language_title">应用语言</string>
+    <string name="section_about">关于</string>
+    <string name="about_name">应用名称</string>
+    <string name="about_version">版本</string>
+    <string name="about_package">包名</string>
+    <string name="about_protocol">协议</string>
+    <string name="about_support">系统支持</string>
+    <string name="about_desc">DavSrv 是一个轻量的局域网 WebDAV 服务器：启动前台服务后，其它设备即可通过 Wi-Fi 读写本机文件。运行时不持有 CPU 唤醒锁，空闲时几乎不消耗电量。</string>
+    <string name="default_account_hint">默认账号 root / 1234，请到「账号」页面修改密码</string>
+
+    <!-- ViewModel / errors -->
+    <string name="err_root_unavailable_check">存储根目录不可用，请检查权限或重新选择目录</string>
+    <string name="err_dir_missing">目录不存在</string>
+    <string name="err_not_a_dir">不是目录</string>
+    <string name="err_read_failed">读取失败</string>
+    <string name="err_name_invalid">名称不合法</string>
+    <string name="err_root_unavailable">存储根目录不可用</string>
+    <string name="err_exists">已存在同名项目</string>
+    <string name="err_create_failed">创建失败</string>
+    <string name="err_entry_missing">项目不存在</string>
+    <string name="err_delete_failed">删除失败</string>
+    <string name="err_username_empty_colon">用户名不能为空，且不能包含冒号</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel">服务器状态</string>
+    <string name="notif_channel_desc">WebDAV 服务运行状态</string>
+    <string name="notif_starting">正在启动…</string>
+    <string name="notif_start_failed">启动失败：%1$s</string>
+    <string name="notif_running_title">DavSrv 运行中</string>
+    <string name="notif_port_suffix">WebDAV · 端口 %1$d</string>
+    <string name="notif_action_stop">停止</string>
+    <string name="error_start_failed">服务未能启动</string>
+
+    <!-- WebDAV server responses (localized) -->
+    <string name="srv_err_create_file">无法创建文件：目录不可写、存储权限不足或文件名不受支持</string>
+    <string name="srv_err_delete">删除失败：存储目录不可写或文件被系统/其它应用占用</string>
+    <string name="srv_err_exists">集合已存在</string>
+    <string name="srv_err_mkcol">创建文件夹失败：目录不可写或名称不受支持</string>
+    <string name="srv_err_dest_missing">缺少 Destination 头</string>
+    <string name="srv_err_dest_unparsable">Destination 头无法解析</string>
+    <string name="srv_err_dest_path_invalid">目标路径无效</string>
+    <string name="srv_err_dest_name_invalid">目标名称无效</string>
+    <string name="srv_err_same_path">源与目标相同</string>
+    <string name="srv_err_into_self">不能复制/移动到自身内部</string>
+    <string name="srv_err_dest_parent_missing">目标目录不存在</string>
+    <string name="srv_err_dest_not_dir">目标不是目录</string>
+    <string name="srv_err_dest_exists">目标已存在且未允许覆盖</string>
+    <string name="srv_err_file_over_dir">不能用文件覆盖文件夹</string>
+    <string name="srv_err_overwrite_failed">目标位置已存在同名项目且无法覆盖</string>
+    <string name="srv_err_transfer">移动/复制失败：目标目录不可写或文件名不受支持（原文件未改动）</string>
+    <string name="srv_err_lock_expired">锁已过期</string>
+    <string name="srv_err_lock_token_missing">缺少 Lock-Token</string>
+    <string name="srv_err_lock_not_found">锁不存在或已过期</string>
+    <string name="srv_err_start_failed">启动失败</string>
+    <string name="srv_err_root_unavailable">存储根目录不可用：请检查存储权限或重新选择目录</string>
+    <string name="srv_err_root_unavailable_short">共享目录不可用</string>
+    <string name="srv_err_internal">服务器错误：%1$s</string>
+    <string name="srv_err_readonly_account">只读账号不允许修改</string>
+    <string name="srv_hint_saf_readonly">SAF 共享目录没有写权限：请到 DavSrv「首页 → 共享目录」重新选择一次文件夹</string>
+    <string name="srv_hint_path_readonly">存储为只读：请在系统设置 → 应用 → DavSrv → 权限中授予「所有文件访问」，或改用「选择文件夹」方式</string>
+    <string name="srv_err_locked">资源已锁定</string>
+    <string name="srv_err_method">不允许使用该方法</string>
+    <string name="srv_err_not_found">找不到该项目</string>
+    <string name="srv_err_put_root">不能写入服务器根目录</string>
+    <string name="srv_err_parent_missing">上级目录不存在</string>
+    <string name="srv_err_delete_root">不能删除服务器根目录</string>
+    <string name="srv_err_transfer_root">不能复制/移动服务器根目录</string>
+    <string name="srv_err_unauthorized">未授权</string>
+    <string name="srv_selftest_no_root">共享目录不可用，请重新授权</string>
+    <string name="srv_selftest_no_create">无法新建文件：缺少写权限</string>
+    <string name="srv_selftest_write_failed">无法写入文件：%1$s</string>
+    <string name="srv_selftest_no_rename">无法重命名：存储目录不支持重命名操作</string>
+    <string name="srv_selftest_rename_lost">重命名后找不到该文件</string>
+    <string name="srv_selftest_read_failed">读取失败：无法读回写入的文件</string>
+    <string name="srv_selftest_mismatch">写入后读取内容不一致（写入 %1$d 字节，读到 %2$d 字节）</string>
+    <string name="srv_selftest_denied">权限不足</string>
+    <string name="language_system">跟随系统</string>
+    <string name="language_system_value">跟随系统（%1$s）</string>
+
+
+    <!-- Built-in browser page -->
+    <string name="web_root">根目录</string>
+    <string name="web_upload">上传文件</string>
+    <string name="web_new_folder">新建文件夹</string>
+    <string name="web_items">%1$d 个项目</string>
+    <string name="web_up">返回上级</string>
+    <string name="web_dir_items">%1$d 项</string>
+    <string name="web_empty">这个文件夹是空的</string>
+    <string name="web_footer">DavSrv · 局域网 WebDAV 服务器</string>
+    <string name="web_free">可用 %1$s / %2$s</string>
+    <string name="web_uploading">正在上传 %1$s</string>
+    <string name="web_upload_failed">上传失败：%1$s（%2$s）</string>
+    <string name="web_mkdir_prompt">新建文件夹名称</string>
+    <string name="web_create_failed">创建失败：%1$s</string>
+    <string name="web_downloading">开始下载…</string>
+
+</resources>

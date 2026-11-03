@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DavSrv</string>
+
+    <!-- Tabs / status -->
+    <string name="tab_home">ภาพรวม</string>
+    <string name="tab_files">ไฟล์</string>
+    <string name="tab_users">บัญชี</string>
+    <string name="tab_logs">บันทึก</string>
+    <string name="tab_settings">การตั้งค่า</string>
+    <string name="status_error">ข้อผิดพลาด</string>
+    <string name="status_running">กำลังทำงาน</string>
+    <string name="status_stopped">หยุดแล้ว</string>
+
+    <!-- Home hero -->
+    <string name="server_running">เซิร์ฟเวอร์กำลังทำงาน</string>
+    <string name="lan_hint">เข้าถึงได้จากอุปกรณ์ในเครือข่าย Wi-Fi เดียวกัน</string>
+    <string name="action_qr">คิวอาร์โค้ด</string>
+    <string name="action_copy">คัดลอกที่อยู่</string>
+    <string name="action_refresh_ip">รีเฟรช IP</string>
+    <string name="toast_copied">คัดลอกที่อยู่แล้ว</string>
+    <string name="action_stop">หยุดเซิร์ฟเวอร์</string>
+    <string name="server_stopped">เซิร์ฟเวอร์หยุดแล้ว</string>
+    <string name="server_stopped_hint">เริ่มเซิร์ฟเวอร์เพื่อเข้าถึงไฟล์ของอุปกรณ์นี้จากคอมพิวเตอร์หรืออุปกรณ์อื่น</string>
+    <string name="action_start">เริ่มเซิร์ฟเวอร์ WebDAV</string>
+    <string name="last_address">ที่อยู่ล่าสุด: %1$s</string>
+
+    <!-- Stats -->
+    <string name="stat_requests">คำขอทั้งหมด</string>
+    <string name="stat_uptime">เวลาทำงาน</string>
+    <string name="stat_in">รับ</string>
+    <string name="stat_out">ส่ง</string>
+    <string name="uptime_hm">%1$d ชม. %2$d น.</string>
+    <string name="uptime_ms">%1$d น. %2$d วิ</string>
+    <string name="uptime_s">%1$d วิ</string>
+
+    <!-- Warnings -->
+    <string name="warn_storage_title">ต้องได้รับสิทธิ์การเข้าถึงที่จัดเก็บ</string>
+    <string name="warn_storage_desc">โหมดพาธต้องได้รับสิทธิ์อ่านและเขียนโฟลเดอร์ที่แชร์ คุณยังเปลี่ยนไปใช้ “เลือกโฟลเดอร์” (SAF) เพื่อความเข้ากันได้ดีขึ้น</string>
+    <string name="action_grant">อนุญาต</string>
+    <string name="warn_notif_title">สิทธิ์การแจ้งเตือนถูกปิด</string>
+    <string name="warn_notif_desc">การแจ้งเตือนช่วยให้บริการเบื้องหน้ารันอยู่และแสดงที่อยู่กับปุ่มหยุด</string>
+    <string name="action_enable_notif">เปิดการแจ้งเตือน</string>
+
+    <!-- Storage card -->
+    <string name="storage_card_title">โฟลเดอร์ที่แชร์</string>
+    <string name="access_rw">อ่านและเขียน</string>
+    <string name="access_ro">อ่านอย่างเดียว</string>
+    <string name="access_none">ไม่มีสิทธิ์เข้าถึง</string>
+    <string name="action_pick_folder">เลือกโฟลเดอร์</string>
+    <string name="action_all_files">เข้าถึงไฟล์ทั้งหมด</string>
+    <string name="action_self_test">ทดสอบที่จัดเก็บด้วยตนเอง</string>
+    <string name="hint_no_access_path">ยังไม่ได้ให้สิทธิ์ที่จัดเก็บ จึงอ่านโฟลเดอร์ที่แชร์ไม่ได้ แตะ “เข้าถึงไฟล์ทั้งหมด” เพื่ออนุญาต หรือเปลี่ยนไปใช้ “เลือกโฟลเดอร์” (SAF)</string>
+    <string name="hint_no_access_saf">โฟลเดอร์ที่เลือกไม่ถูกต้องแล้ว โปรดอนุญาตอีกครั้งผ่าน “เลือกโฟลเดอร์”</string>
+    <string name="hint_read_only_path">อ่านอย่างเดียว: เขียนไฟล์ไม่ได้ แตะ “เข้าถึงไฟล์ทั้งหมด” เพื่ออนุญาต ไม่เช่นนั้นไคลเอนต์จะอัปโหลด แก้ไข หรือลบไฟล์ไม่ได้</string>
+    <string name="hint_read_only_saf">อ่านอย่างเดียว: ไคลเอนต์จะเขียนไม่ได้ เลือกโฟลเดอร์ใหม่ใน “เลือกโฟลเดอร์” และให้สิทธิ์อ่านและเขียน</string>
+    <string name="self_test_ok">ทดสอบผ่าน: สร้าง เขียน เปลี่ยนชื่อ และลบ ทำงานได้ทั้งหมด</string>
+
+    <!-- Connect card -->
+    <string name="how_to_connect">วิธีเชื่อมต่อ</string>
+    <string name="client_windows">Windows</string>
+    <string name="client_windows_hint">File Explorer → Map network drive แล้วกรอกที่อยู่ด้านบน</string>
+    <string name="client_macos">macOS</string>
+    <string name="client_macos_hint">Finder → Go → Connect to Server (⌘K)</string>
+    <string name="client_ios">iOS / iPadOS</string>
+    <string name="client_ios_hint">แอป Files → Connect to Server</string>
+    <string name="client_android">Android</string>
+    <string name="client_android_hint">โปรแกรมจัดการไฟล์ที่รองรับ WebDAV เพิ่มบัญชี</string>
+    <string name="connect_footer">รองรับ HTTP Basic การล็อกการเขียน และการเล่นต่อแบบ Range</string>
+
+    <!-- QR sheet -->
+    <string name="qr_title">สแกนเพื่อเชื่อมต่อ</string>
+    <string name="qr_hint">สแกนโค้ดด้วยไคลเอนต์ WebDAV บนโทรศัพท์</string>
+    <string name="qr_cd">คิวอาร์โค้ดของที่อยู่เซิร์ฟเวอร์</string>
+    <string name="qr_no_network">ไม่มีการเชื่อมต่อเครือข่าย สร้างคิวอาร์โค้ดไม่ได้</string>
+    <string name="qr_account_hint">ดูข้อมูลเข้าสู่ระบบได้ที่หน้า “บัญชี”</string>
+    <string name="qr_map_hint">เคล็ดลับ: Windows / macOS ใช้ “Map network drive” ได้โดยตรง</string>
+
+    <!-- Files -->
+    <string name="cd_up">ขึ้นหนึ่งระดับ</string>
+    <string name="cd_new_folder">โฟลเดอร์ใหม่</string>
+    <string name="cd_refresh">รีเฟรช</string>
+    <string name="action_retry">ลองใหม่</string>
+    <string name="empty_folder">โฟลเดอร์นี้ว่างเปล่า</string>
+    <string name="label_folder">โฟลเดอร์</string>
+    <string name="cd_delete">ลบ</string>
+    <string name="new_folder_title">โฟลเดอร์ใหม่</string>
+    <string name="label_name">ชื่อ</string>
+    <string name="action_create">สร้าง</string>
+    <string name="action_cancel">ยกเลิก</string>
+    <string name="delete_confirm_title">ยืนยันการลบ</string>
+    <string name="delete_confirm_text">ลบ “%1$s” อย่างถาวรหรือไม่ การดำเนินการนี้ย้อนกลับไม่ได้</string>
+
+    <!-- Users -->
+    <string name="users_card_title">บัญชีที่เข้าถึงได้</string>
+    <string name="users_card_desc">ไคลเอนต์ทั้งหมดยืนยันตัวตนด้วย HTTP Basic ผ่านบัญชีเหล่านี้ บัญชีเริ่มต้นคือ root / 1234 — ควรเปลี่ยนรหัสผ่านโดยเร็ว</string>
+    <string name="action_add_account">เพิ่มบัญชี</string>
+    <string name="delete_account_title">ลบบัญชี</string>
+    <string name="delete_account_text">ลบบัญชี “%1$s” หรือไม่ ไคลเอนต์ที่เชื่อมต่ออยู่จะเสียสิทธิ์ทันที</string>
+    <string name="badge_read_only">อ่านอย่างเดียว</string>
+    <string name="badge_read_write">อ่านและเขียน</string>
+    <string name="cd_edit">แก้ไข</string>
+    <string name="add_account_title">เพิ่มบัญชี</string>
+    <string name="edit_account_title">แก้ไขบัญชี</string>
+    <string name="label_username">ชื่อผู้ใช้</string>
+    <string name="label_password">รหัสผ่าน</string>
+    <string name="label_new_password">รหัสผ่านใหม่ (เว้นว่างเพื่อคงเดิม)</string>
+    <string name="label_read_only_account">บัญชีอ่านอย่างเดียว</string>
+    <string name="read_only_desc">เรียกดูและดาวน์โหลดได้เท่านั้น แก้ไขไฟล์ไม่ได้</string>
+    <string name="err_username_required">กรุณากรอกชื่อผู้ใช้</string>
+    <string name="err_password_short">รหัสผ่านต้องมีอย่างน้อย 4 ตัวอักษร</string>
+    <string name="err_password_required">กรุณาตั้งรหัสผ่าน</string>
+    <string name="action_save">บันทึก</string>
+
+    <!-- Logs -->
+    <string name="logs_recent">คำขอล่าสุด %1$d รายการ</string>
+    <string name="action_clear">ล้าง</string>
+    <string name="logs_empty_title">ยังไม่มีคำขอ</string>
+    <string name="logs_empty_desc">คำขอของไคลเอนต์จะปรากฏที่นี่หลังเชื่อมต่อ</string>
+
+    <!-- Settings -->
+    <string name="section_server">เซิร์ฟเวอร์</string>
+    <string name="label_port">พอร์ต</string>
+    <string name="err_port_range">พอร์ตต้องอยู่ระหว่าง 1024 - 65535</string>
+    <string name="action_save_port">บันทึกพอร์ต</string>
+    <string name="port_restart_hint">เซิร์ฟเวอร์จะรีสตาร์ทอัตโนมัติหลังเปลี่ยน</string>
+    <string name="section_storage">ที่จัดเก็บ</string>
+    <string name="current_shared_folder">โฟลเดอร์ที่แชร์ปัจจุบัน</string>
+    <string name="action_request_storage">สิทธิ์ที่จัดเก็บ</string>
+    <string name="path_mode_hint">หรือระบุพาธโดยตรง (เร็วกว่า แต่ต้องมีสิทธิ์ที่จัดเก็บ)</string>
+    <string name="label_shared_path">พาธที่แชร์</string>
+    <string name="action_use_path">ใช้พาธนี้</string>
+    <string name="no_permission">ไม่มีสิทธิ์</string>
+    <string name="section_runtime">การทำงานและแบตเตอรี่</string>
+    <string name="pref_boot_title">เริ่มเมื่อบูต</string>
+    <string name="pref_boot_desc">รีสตาร์ทบริการอัตโนมัติหลังรีบูตอุปกรณ์</string>
+    <string name="pref_wifi_title">ทำให้ Wi-Fi ทำงานตลอด</string>
+    <string name="pref_wifi_desc">เสถียรกว่าสำหรับการถ่ายโอนขนาดใหญ่ ใช้แบตเตอรี่เพิ่มขึ้นเล็กน้อย</string>
+    <string name="pref_hidden_title">แสดงไฟล์ที่ซ่อนอยู่</string>
+    <string name="pref_hidden_desc">ไฟล์และโฟลเดอร์ที่ขึ้นต้นด้วยจุด</string>
+    <string name="section_language">ภาษา</string>
+    <string name="pref_language_title">ภาษาของแอป</string>
+    <string name="section_about">เกี่ยวกับ</string>
+    <string name="about_name">ชื่อแอป</string>
+    <string name="about_version">เวอร์ชัน</string>
+    <string name="about_package">แพ็กเกจ</string>
+    <string name="about_protocol">โปรโตคอล</string>
+    <string name="about_support">การรองรับระบบ</string>
+    <string name="about_desc">DavSrv เป็นเซิร์ฟเวอร์ WebDAV ใน LAN ขนาดเล็ก เริ่มบริการเบื้องหน้าแล้วอุปกรณ์อื่นจะอ่านและเขียนไฟล์ของอุปกรณ์นี้ผ่าน Wi-Fi ได้ ไม่ถือ CPU wake lock ขณะทำงาน การใช้ไฟตอนว่างใกล้ศูนย์</string>
+    <string name="default_account_hint">บัญชีเริ่มต้น root / 1234 — เปลี่ยนรหัสผ่านที่หน้า “บัญชี”</string>
+
+    <!-- ViewModel / errors -->
+    <string name="err_root_unavailable_check">รูทที่จัดเก็บไม่พร้อมใช้งาน ตรวจสอบสิทธิ์หรือเลือกโฟลเดอร์ใหม่</string>
+    <string name="err_dir_missing">ไม่พบไดเรกทอรี</string>
+    <string name="err_not_a_dir">ไม่ใช่ไดเรกทอรี</string>
+    <string name="err_read_failed">อ่านไม่สำเร็จ</string>
+    <string name="err_name_invalid">ชื่อไม่ถูกต้อง</string>
+    <string name="err_root_unavailable">รูทที่จัดเก็บไม่พร้อมใช้งาน</string>
+    <string name="err_exists">มีรายการชื่อนี้อยู่แล้ว</string>
+    <string name="err_create_failed">สร้างไม่สำเร็จ</string>
+    <string name="err_entry_missing">ไม่พบรายการ</string>
+    <string name="err_delete_failed">ลบไม่สำเร็จ</string>
+    <string name="err_username_empty_colon">ชื่อผู้ใช้ต้องไม่ว่างและต้องไม่มี “:”</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel">สถานะเซิร์ฟเวอร์</string>
+    <string name="notif_channel_desc">สถานะการทำงานของเซิร์ฟเวอร์ WebDAV</string>
+    <string name="notif_starting">กำลังเริ่ม…</string>
+    <string name="notif_start_failed">เริ่มไม่สำเร็จ: %1$s</string>
+    <string name="notif_running_title">DavSrv กำลังทำงาน</string>
+    <string name="notif_port_suffix">WebDAV · พอร์ต %1$d</string>
+    <string name="notif_action_stop">หยุด</string>
+    <string name="error_start_failed">บริการเริ่มไม่สำเร็จ</string>
+
+    <!-- WebDAV server responses (localized) -->
+    <string name="srv_err_create_file">สร้างไฟล์ไม่ได้: โฟลเดอร์เขียนไม่ได้ ไม่มีสิทธิ์ที่จัดเก็บ หรือชื่อไฟล์ไม่รองรับ</string>
+    <string name="srv_err_delete">ลบไม่สำเร็จ: โฟลเดอร์เขียนไม่ได้ หรือไฟล์ถูกใช้งานโดยระบบหรือแอปอื่น</string>
+    <string name="srv_err_exists">คอลเลกชันมีอยู่แล้ว</string>
+    <string name="srv_err_mkcol">สร้างโฟลเดอร์ไม่ได้: โฟลเดอร์แม่เขียนไม่ได้หรือชื่อไม่รองรับ</string>
+    <string name="srv_err_dest_missing">ไม่มีส่วนหัว Destination</string>
+    <string name="srv_err_dest_unparsable">อ่านส่วนหัว Destination ไม่ได้</string>
+    <string name="srv_err_dest_path_invalid">พาธปลายทางไม่ถูกต้อง</string>
+    <string name="srv_err_dest_name_invalid">ชื่อปลายทางไม่ถูกต้อง</string>
+    <string name="srv_err_same_path">ต้นทางและปลายทางเป็นที่เดียวกัน</string>
+    <string name="srv_err_into_self">คัดลอกหรือย้ายรายการเข้าไปในตัวเองไม่ได้</string>
+    <string name="srv_err_dest_parent_missing">ไม่มีโฟลเดอร์ปลายทาง</string>
+    <string name="srv_err_dest_not_dir">ปลายทางไม่ใช่โฟลเดอร์</string>
+    <string name="srv_err_dest_exists">ปลายทางมีอยู่แล้วและไม่อนุญาตให้เขียนทับ</string>
+    <string name="srv_err_file_over_dir">ไฟล์เขียนทับโฟลเดอร์ไม่ได้</string>
+    <string name="srv_err_overwrite_failed">มีรายการชื่อเดียวกันที่ปลายทางและแทนที่ไม่ได้</string>
+    <string name="srv_err_transfer">ย้าย/คัดลอกไม่สำเร็จ: โฟลเดอร์ปลายทางเขียนไม่ได้หรือชื่อไม่รองรับ (ไฟล์ต้นฉบับไม่ถูกแก้ไข)</string>
+    <string name="srv_err_lock_expired">ล็อกหมดอายุแล้ว</string>
+    <string name="srv_err_lock_token_missing">ไม่มี Lock-Token</string>
+    <string name="srv_err_lock_not_found">ไม่มีล็อกนี้หรือหมดอายุแล้ว</string>
+    <string name="srv_err_start_failed">เริ่มไม่สำเร็จ</string>
+    <string name="srv_err_root_unavailable">โฟลเดอร์ที่แชร์ไม่พร้อมใช้งาน ตรวจสอบสิทธิ์ที่จัดเก็บหรือเลือกโฟลเดอร์ใหม่</string>
+    <string name="srv_err_root_unavailable_short">โฟลเดอร์ที่แชร์ไม่พร้อมใช้งาน</string>
+    <string name="srv_err_internal">ข้อผิดพลาดเซิร์ฟเวอร์: %1$s</string>
+    <string name="srv_err_readonly_account">บัญชีนี้อ่านอย่างเดียวและแก้ไขไฟล์ไม่ได้</string>
+    <string name="srv_hint_saf_readonly">โฟลเดอร์ที่แชร์ไม่มีสิทธิ์เขียน เปิด DavSrv → ภาพรวม → โฟลเดอร์ที่แชร์ แล้วเลือกโฟลเดอร์ใหม่</string>
+    <string name="srv_hint_path_readonly">ที่จัดเก็บเป็นอ่านอย่างเดียว ให้สิทธิ์ “เข้าถึงไฟล์ทั้งหมด” ที่ การตั้งค่า → แอป → DavSrv → สิทธิ์ หรือเปลี่ยนไปใช้ “เลือกโฟลเดอร์”</string>
+    <string name="srv_err_locked">ทรัพยากรถูกล็อก</string>
+    <string name="srv_err_method">ไม่อนุญาตให้ใช้เมธอดนี้</string>
+    <string name="srv_err_not_found">ไม่พบ</string>
+    <string name="srv_err_put_root">เขียนที่รูทของเซิร์ฟเวอร์ไม่ได้</string>
+    <string name="srv_err_parent_missing">ไม่พบโฟลเดอร์แม่</string>
+    <string name="srv_err_delete_root">ลบรูทของเซิร์ฟเวอร์ไม่ได้</string>
+    <string name="srv_err_transfer_root">คัดลอกหรือย้ายรูทของเซิร์ฟเวอร์ไม่ได้</string>
+    <string name="srv_err_unauthorized">ไม่ได้รับอนุญาต</string>
+    <string name="srv_selftest_no_root">โฟลเดอร์ที่แชร์ไม่พร้อมใช้งาน โปรดอนุญาตอีกครั้ง</string>
+    <string name="srv_selftest_no_create">สร้างไฟล์ไม่ได้: ไม่มีสิทธิ์เขียน</string>
+    <string name="srv_selftest_write_failed">เขียนไฟล์ไม่ได้: %1$s</string>
+    <string name="srv_selftest_no_rename">เปลี่ยนชื่อไม่ได้: ที่จัดเก็บนี้ไม่รองรับการเปลี่ยนชื่อ</string>
+    <string name="srv_selftest_rename_lost">ไม่พบไฟล์หลังเปลี่ยนชื่อ</string>
+    <string name="srv_selftest_read_failed">อ่านไม่สำเร็จ: อ่านไฟล์ที่เขียนกลับไม่ได้</string>
+    <string name="srv_selftest_mismatch">เนื้อหาไม่ตรงกันหลังเขียน (เขียน %1$d ไบต์ อ่าน %2$d ไบต์)</string>
+    <string name="srv_selftest_denied">ไม่ได้รับสิทธิ์</string>
+    <string name="language_system">ตามระบบ</string>
+    <string name="language_system_value">ตามระบบ (%1$s)</string>
+
+
+    <!-- Built-in browser page -->
+    <string name="web_root">รูท</string>
+    <string name="web_upload">อัปโหลดไฟล์</string>
+    <string name="web_new_folder">โฟลเดอร์ใหม่</string>
+    <string name="web_items">%1$d รายการ</string>
+    <string name="web_up">ขึ้นหนึ่งระดับ</string>
+    <string name="web_dir_items">%1$d รายการ</string>
+    <string name="web_empty">โฟลเดอร์นี้ว่างเปล่า</string>
+    <string name="web_footer">DavSrv · เซิร์ฟเวอร์ WebDAV ใน LAN</string>
+    <string name="web_free">ว่าง %1$s จาก %2$s</string>
+    <string name="web_uploading">กำลังอัปโหลด %1$s</string>
+    <string name="web_upload_failed">อัปโหลดไม่สำเร็จ: %1$s (%2$s)</string>
+    <string name="web_mkdir_prompt">ชื่อโฟลเดอร์ใหม่</string>
+    <string name="web_create_failed">สร้างไม่สำเร็จ: %1$s</string>
+    <string name="web_downloading">กำลังเริ่มดาวน์โหลด…</string>
+
+</resources>
