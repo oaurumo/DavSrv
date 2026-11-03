@@ -4,6 +4,20 @@ All notable changes to this project are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] — 2026-11-03
+
+### Added
+
+- Per-architecture APKs: `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64` plus a universal build.
+
+### Fixed
+
+- **Crash when starting the server on a port below 1024.** Android apps are unprivileged users, so the kernel rejects those ports — but Ktor's CIO engine reported the bind failure asynchronously, killing the process instead of surfacing an error. The server now probes the port synchronously first and shows a localized "cannot bind port" message (also covers ports already in use). The port setting accepts 1024 - 65535: apps cannot claim ports below 1024.
+
+### Added
+
+- **LAN domain access (mDNS / Bonjour).** The server now advertises a `.local` host name (default: two random lowercase letters, seeded once and kept stable, e.g. `http://qx.local:8080`) plus `_webdav._tcp` and `_http._tcp` services, so computers can connect by name instead of IP. On the home screen the prefix can be customized and the announcement pinned to a specific network interface (auto by default); an on/off switch disables it entirely. Changes apply while the server is running. The home card shows the `.local` URL next to the IP. Registration runs off the main thread with a generation counter, survives network switches (re-announces on IP change), and degrades silently to the IP URL when the router blocks multicast.
+
 ## [1.0.0] — 2026-11-03
 
 First public release.
@@ -35,4 +49,5 @@ First public release.
 - Storage card buttons are stacked full-width instead of sharing one row.
 - Lock lifetime is capped at 2 hours so a crashed client cannot hold a file forever.
 
+[1.0.1]: https://github.com/<your-name>/DavSrv/releases/tag/v1.0.1
 [1.0.0]: https://github.com/<your-name>/DavSrv/releases/tag/v1.0.0

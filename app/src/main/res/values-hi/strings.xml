@@ -138,6 +138,13 @@
     <string name="pref_wifi_desc">बड़े ट्रांसफ़र के लिए अधिक स्थिर; बैटरी थोड़ी ज़्यादा लगती है</string>
     <string name="pref_hidden_title">छिपी फ़ाइलें दिखाएँ</string>
     <string name="pref_hidden_desc">डॉट से शुरू होने वाली फ़ाइलें और फ़ोल्डर</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">लैन डोमेन नाम (mDNS)</string>
+    <string name="pref_mdns_desc">नेटवर्क पर एक स्थिर .local नाम घोषित करता है, जिससे कंप्यूटर IP टाइप किए बिना जुड़ सकें</string>
+    <string name="pref_mdns_host_label">डोमेन उपसर्ग</string>
+    <string name="pref_mdns_bind_title">नेटवर्क इंटरफ़ेस</string>
+    <string name="pref_mdns_bind_auto">स्वतः (अनुशंसित)</string>
+    <string name="pref_mdns_bind_none">कोई नेटवर्क इंटरफ़ेस नहीं मिला</string>
     <string name="section_language">भाषा</string>
     <string name="pref_language_title">ऐप की भाषा</string>
     <string name="section_about">परिचय</string>
@@ -235,4 +242,6 @@
     <string name="web_create_failed">बनाने में विफल: %1$s</string>
     <string name="web_downloading">डाउनलोड शुरू हो रहा है…</string>
 
+    <string name="guide_toggle">कनेक्शन गाइड दिखाएँ या छिपाएँ</string>
+    <string name="srv_err_port_bind">पोर्ट %1$d बाँधा नहीं जा सकता: यह पहले से उपयोग में हो सकता है, या सिस्टम 1024 से नीचे के पोर्ट की अनुमति नहीं देता। कोई दूसरा पोर्ट आज़माएँ</string>
 </resources>

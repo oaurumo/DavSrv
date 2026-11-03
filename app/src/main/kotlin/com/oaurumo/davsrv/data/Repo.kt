@@ -36,6 +36,7 @@ object Repo {
         userStore = UserStore(app)
 
         scope.launch {
+            settingsStore.ensureMdnsLabel()
             settingsStore.flow.collect { s ->
                 settings.value = if (s.rootPath.isBlank()) s.copy(rootPath = defaultRootPath) else s
             }
@@ -61,6 +62,10 @@ object Repo {
     suspend fun setBootStart(v: Boolean) = settingsStore.setBootStart(v)
     suspend fun setWifiLock(v: Boolean) = settingsStore.setWifiLock(v)
     suspend fun setKeepAwake(v: Boolean) = settingsStore.setKeepAwake(v)
+    suspend fun setMdnsEnabled(v: Boolean) = settingsStore.setMdnsEnabled(v)
+    suspend fun setMdnsHost(v: String) = settingsStore.setMdnsHost(v)
+    suspend fun setMdnsBindIp(v: String) = settingsStore.setMdnsBindIp(v)
+    suspend fun setGuideHidden(v: Boolean) = settingsStore.setGuideHidden(v)
 
     suspend fun upsertUser(user: AuthUser) = userStore.upsert(user)
     suspend fun deleteUser(username: String) = userStore.delete(username)

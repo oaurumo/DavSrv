@@ -116,6 +116,13 @@
     <string name="pref_wifi_desc">Стабильнее при больших передачах; чуть выше расход батареи</string>
     <string name="pref_hidden_title">Показывать скрытые файлы</string>
     <string name="pref_hidden_desc">Файлы и папки, начинающиеся с точки</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">Локальное доменное имя (mDNS)</string>
+    <string name="pref_mdns_desc">Объявляет постоянное имя .local в сети — компьютеры смогут подключаться без ввода IP-адреса</string>
+    <string name="pref_mdns_host_label">Префикс домена</string>
+    <string name="pref_mdns_bind_title">Сетевой интерфейс</string>
+    <string name="pref_mdns_bind_auto">Автоматически (рекомендуется)</string>
+    <string name="pref_mdns_bind_none">Сетевые интерфейсы не найдены</string>
     <string name="section_language">Язык</string>
     <string name="pref_language_title">Язык приложения</string>
     <string name="section_about">О приложении</string>
@@ -209,4 +216,6 @@
     <string name="web_create_failed">Ошибка создания: %1$s</string>
     <string name="web_downloading">Начинаем скачивание…</string>
 
+    <string name="guide_toggle">Показать или скрыть руководство по подключению</string>
+    <string name="srv_err_port_bind">Не удалось занять порт %1$d: возможно, он уже используется, либо система запрещает порты ниже 1024. Выберите другой порт</string>
 </resources>

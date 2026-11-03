@@ -138,6 +138,13 @@
     <string name="pref_wifi_desc">传输大文件更稳定，会增加少量耗电</string>
     <string name="pref_hidden_title">显示隐藏文件</string>
     <string name="pref_hidden_desc">以 . 开头的文件与文件夹</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">局域网域名（mDNS）</string>
+    <string name="pref_mdns_desc">在局域网内广播固定的 .local 域名，电脑无需输入 IP 即可访问</string>
+    <string name="pref_mdns_host_label">域名前缀</string>
+    <string name="pref_mdns_bind_title">绑定网卡</string>
+    <string name="pref_mdns_bind_auto">自动（推荐）</string>
+    <string name="pref_mdns_bind_none">未找到可用的网络接口</string>
     <string name="section_language">语言</string>
     <string name="pref_language_title">应用语言</string>
     <string name="section_about">关于</string>
@@ -235,4 +242,6 @@
     <string name="web_create_failed">创建失败：%1$s</string>
     <string name="web_downloading">开始下载…</string>
 
+    <string name="guide_toggle">显示或隐藏连接指南</string>
+    <string name="srv_err_port_bind">无法绑定端口 %1$d：端口可能已被占用，或系统不允许使用 1024 以下的端口，请换一个端口</string>
 </resources>

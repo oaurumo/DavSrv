@@ -24,6 +24,19 @@ class SettingsStore(private val context: Context) {
         val WIFI_LOCK = booleanPreferencesKey("wifi_lock")
         val KEEP_AWAKE = booleanPreferencesKey("keep_awake")
         val READ_ONLY_GUEST = booleanPreferencesKey("read_only_guest")
+        val MDNS_ENABLED = booleanPreferencesKey("mdns_enabled")
+        val MDNS_HOST = stringPreferencesKey("mdns_host")
+        val MDNS_BIND_IP = stringPreferencesKey("mdns_bind_ip")
+        val GUIDE_HIDDEN = booleanPreferencesKey("guide_hidden")
+    }
+
+    companion object {
+        /** Two random lowercase letters, e.g. "qx" — the default .local label. */
+        fun randomLabel(): String {
+            val a = 'a' + (Math.random() * 26).toInt()
+            val b = 'a' + (Math.random() * 26).toInt()
+            return "$a$b"
+        }
     }
 
     val flow: Flow<AppSettings> = context.settingsDataStore.data.map { it.toSettings() }
@@ -36,7 +49,11 @@ class SettingsStore(private val context: Context) {
         bootStart = this[K.BOOT_START] ?: false,
         wifiLock = this[K.WIFI_LOCK] ?: false,
         keepScreenOn = this[K.KEEP_AWAKE] ?: false,
-        readOnlyGuest = this[K.READ_ONLY_GUEST] ?: false
+        readOnlyGuest = this[K.READ_ONLY_GUEST] ?: false,
+        mdnsEnabled = this[K.MDNS_ENABLED] ?: true,
+        mdnsHost = this[K.MDNS_HOST] ?: "",
+        mdnsBindIp = this[K.MDNS_BIND_IP] ?: "",
+        guideHidden = this[K.GUIDE_HIDDEN] ?: false
     )
 
     suspend fun setPort(port: Int) = edit { it[K.PORT] = port.coerceIn(1024, 65535) }
@@ -50,6 +67,19 @@ class SettingsStore(private val context: Context) {
     suspend fun setWifiLock(v: Boolean) = edit { it[K.WIFI_LOCK] = v }
     suspend fun setKeepAwake(v: Boolean) = edit { it[K.KEEP_AWAKE] = v }
     suspend fun setReadOnlyGuest(v: Boolean) = edit { it[K.READ_ONLY_GUEST] = v }
+    suspend fun setMdnsEnabled(v: Boolean) = edit { it[K.MDNS_ENABLED] = v }
+    suspend fun setMdnsHost(v: String) = edit { it[K.MDNS_HOST] = v.trim() }
+    suspend fun setMdnsBindIp(v: String) = edit { it[K.MDNS_BIND_IP] = v.trim() }
+    suspend fun setGuideHidden(v: Boolean) = edit { it[K.GUIDE_HIDDEN] = v }
+
+    /**
+     * Seeds the stable random 2-letter mDNS label on first launch. Done as a
+     * write (not just a default) so the label survives restarts and is shared
+     * by every reader without re-randomizing.
+     */
+    suspend fun ensureMdnsLabel() = context.settingsDataStore.edit { prefs ->
+        if (prefs[K.MDNS_HOST] == null) prefs[K.MDNS_HOST] = randomLabel()
+    }
 
     private suspend fun edit(block: (androidx.datastore.preferences.core.MutablePreferences) -> Unit) {
         context.settingsDataStore.edit { block(it) }

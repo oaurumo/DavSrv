@@ -138,6 +138,13 @@
     <string name="pref_wifi_desc">Lebih stabil untuk pemindahan besar; penggunaan bateri sedikit lebih tinggi</string>
     <string name="pref_hidden_title">Tunjukkan fail tersembunyi</string>
     <string name="pref_hidden_desc">Fail dan folder yang bermula dengan titik</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">Nama domain LAN (mDNS)</string>
+    <string name="pref_mdns_desc">Menyiarkan nama .local tetap dalam rangkaian agar komputer boleh menyambung tanpa memasukkan IP</string>
+    <string name="pref_mdns_host_label">Awalan domain</string>
+    <string name="pref_mdns_bind_title">Antara muka rangkaian</string>
+    <string name="pref_mdns_bind_auto">Automatik (disyorkan)</string>
+    <string name="pref_mdns_bind_none">Tiada antara muka rangkaian ditemui</string>
     <string name="section_language">Bahasa</string>
     <string name="pref_language_title">Bahasa aplikasi</string>
     <string name="section_about">Perihal</string>
@@ -235,4 +242,6 @@
     <string name="web_create_failed">Gagal mencipta: %1$s</string>
     <string name="web_downloading">Memulakan muat turun…</string>
 
+    <string name="guide_toggle">Tunjukkan atau sembunyikan panduan sambungan</string>
+    <string name="srv_err_port_bind">Tidak dapat menggunakan port %1$d: mungkin sedang digunakan, atau sistem menyekat port bawah 1024. Cuba port lain</string>
 </resources>

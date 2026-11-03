@@ -9,8 +9,10 @@ import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,23 +22,34 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -44,12 +57,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalClipboardManager
@@ -65,6 +80,8 @@ import androidx.lifecycle.compose.LifecycleResumeEffect
 import com.oaurumo.davsrv.R
 import com.oaurumo.davsrv.data.AppSettings
 import com.oaurumo.davsrv.data.ServerState
+import com.oaurumo.davsrv.server.MdnsAnnouncer
+import com.oaurumo.davsrv.server.NetworkUtils
 import com.oaurumo.davsrv.server.Storage
 import kotlinx.coroutines.delay
 
@@ -134,6 +151,8 @@ fun HomeScreen(
             }
         }
 
+        item { MdnsCard(settings, vm) }
+
         item {
             StorageCard(
                 settings = settings,
@@ -151,7 +170,7 @@ fun HomeScreen(
             )
         }
 
-        item { ClientsCard() }
+        item { ClientsCard(settings, vm) }
     }
 }
 
@@ -209,6 +228,16 @@ private fun HeroCard(
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
+                state.localAddress?.let { local ->
+                    Spacer(Modifier.height(4.dp))
+                    Text(
+                        local,
+                        color = Color.White.copy(alpha = 0.9f),
+                        fontSize = 15.sp,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
                 Spacer(Modifier.height(4.dp))
                 Text(
                     stringResource(R.string.lan_hint),
@@ -405,6 +434,140 @@ private fun WarningCard(
 }
 
 @Composable
+private fun MdnsCard(settings: AppSettings, vm: AppViewModel) {
+    var mdnsText by remember(settings.mdnsHost) { mutableStateOf(settings.mdnsHost) }
+    var showBind by remember { mutableStateOf(false) }
+    Card(
+        shape = RoundedCornerShape(20.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant)
+    ) {
+        Column(Modifier.padding(16.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Column(Modifier.weight(1f)) {
+                    Text(stringResource(R.string.pref_mdns_title), style = MaterialTheme.typography.titleMedium)
+                    Text(
+                        stringResource(R.string.pref_mdns_desc),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+                Switch(checked = settings.mdnsEnabled, onCheckedChange = { vm.setMdnsEnabled(it) })
+            }
+            if (settings.mdnsEnabled) {
+                Spacer(Modifier.height(8.dp))
+                OutlinedTextField(
+                    value = mdnsText,
+                    onValueChange = { mdnsText = it },
+                    label = { Text(stringResource(R.string.pref_mdns_host_label)) },
+                    placeholder = { Text(settings.mdnsHost) },
+                    supportingText = {
+                        Text(
+                            "http://" + MdnsAnnouncer.sanitize(
+                                mdnsText.ifBlank { settings.mdnsHost }
+                            ) + ".local:" + settings.port
+                        )
+                    },
+                    singleLine = true,
+                    keyboardActions = KeyboardActions(onDone = { vm.setMdnsHost(mdnsText) }),
+                    trailingIcon = {
+                        if (mdnsText.trim() != settings.mdnsHost) {
+                            IconButton(onClick = { vm.setMdnsHost(mdnsText) }) {
+                                Icon(
+                                    Icons.Default.Check,
+                                    contentDescription = stringResource(R.string.action_save)
+                                )
+                            }
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                )
+                val nics = remember { NetworkUtils.allIps() }
+                val bindLabel = if (settings.mdnsBindIp.isBlank()) {
+                    stringResource(R.string.pref_mdns_bind_auto)
+                } else {
+                    nics.firstOrNull { it.ip == settings.mdnsBindIp }
+                        ?.let { "${it.ip}（${it.name}）" } ?: settings.mdnsBindIp
+                }
+                Row(
+                    Modifier
+                        .fillMaxWidth()
+                        .clickable { showBind = true }
+                        .padding(vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        stringResource(R.string.pref_mdns_bind_title),
+                        style = MaterialTheme.typography.bodyLarge,
+                        modifier = Modifier.weight(1f)
+                    )
+                    Text(
+                        bindLabel,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.primary,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
+            }
+        }
+    }
+    if (showBind) {
+        val nics = remember { NetworkUtils.allIps() }
+        AlertDialog(
+            onDismissRequest = { showBind = false },
+            title = { Text(stringResource(R.string.pref_mdns_bind_title)) },
+            text = {
+                Column(
+                    Modifier
+                        .heightIn(max = 400.dp)
+                        .verticalScroll(rememberScrollState())
+                ) {
+                    BindRow(stringResource(R.string.pref_mdns_bind_auto), settings.mdnsBindIp.isBlank()) {
+                        showBind = false
+                        vm.setMdnsBindIp("")
+                    }
+                    nics.forEach { nic ->
+                        BindRow("${nic.ip}（${nic.name}）", settings.mdnsBindIp == nic.ip) {
+                            showBind = false
+                            vm.setMdnsBindIp(nic.ip)
+                        }
+                    }
+                    if (nics.isEmpty()) {
+                        Text(
+                            stringResource(R.string.pref_mdns_bind_none),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            },
+            confirmButton = {},
+            dismissButton = {
+                TextButton(onClick = { showBind = false }) {
+                    Text(stringResource(R.string.action_cancel))
+                }
+            }
+        )
+    }
+}
+
+@Composable
+private fun BindRow(label: String, selected: Boolean, onClick: () -> Unit) {
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick)
+            .padding(vertical = 6.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        RadioButton(selected = selected, onClick = null)
+        Spacer(Modifier.width(8.dp))
+        Text(label, style = MaterialTheme.typography.bodyLarge)
+    }
+}
+
+@Composable
 private fun StorageCard(
     settings: AppSettings,
     onPickFolder: () -> Unit,
@@ -508,25 +671,47 @@ private fun StorageCard(
 }
 
 @Composable
-private fun ClientsCard() {
+private fun ClientsCard(settings: AppSettings, vm: AppViewModel) {
     Card(
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant)
     ) {
         Column(Modifier.padding(16.dp)) {
-            Text(stringResource(R.string.how_to_connect), style = MaterialTheme.typography.titleMedium)
-            Spacer(Modifier.height(10.dp))
-            ClientRow(stringResource(R.string.client_windows), stringResource(R.string.client_windows_hint))
-            ClientRow(stringResource(R.string.client_macos), stringResource(R.string.client_macos_hint))
-            ClientRow(stringResource(R.string.client_ios), stringResource(R.string.client_ios_hint))
-            ClientRow(stringResource(R.string.client_android), stringResource(R.string.client_android_hint))
-            Spacer(Modifier.height(6.dp))
-            Text(
-                stringResource(R.string.connect_footer),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
+            // Collapsible header: persisted via DataStore so the choice survives restarts.
+            Row(
+                Modifier
+                    .fillMaxWidth()
+                    .clickable { vm.setGuideHidden(!settings.guideHidden) },
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    stringResource(R.string.how_to_connect),
+                    style = MaterialTheme.typography.titleMedium,
+                    modifier = Modifier.weight(1f)
+                )
+                Icon(
+                    Icons.Filled.KeyboardArrowDown,
+                    contentDescription = stringResource(R.string.guide_toggle),
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.rotate(if (settings.guideHidden) 0f else 180f)
+                )
+            }
+            AnimatedVisibility(visible = !settings.guideHidden) {
+                Column {
+                    Spacer(Modifier.height(10.dp))
+                    ClientRow(stringResource(R.string.client_windows), stringResource(R.string.client_windows_hint))
+                    ClientRow(stringResource(R.string.client_macos), stringResource(R.string.client_macos_hint))
+                    ClientRow(stringResource(R.string.client_ios), stringResource(R.string.client_ios_hint))
+                    ClientRow(stringResource(R.string.client_android), stringResource(R.string.client_android_hint))
+                    Spacer(Modifier.height(6.dp))
+                    Text(
+                        stringResource(R.string.connect_footer),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
         }
     }
 }

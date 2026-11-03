@@ -116,6 +116,13 @@
     <string name="pref_wifi_desc">大きな転送でより安定。消費電力はわずかに増加</string>
     <string name="pref_hidden_title">隠しファイルを表示</string>
     <string name="pref_hidden_desc">ドットで始まるファイルとフォルダ</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">LANドメイン名（mDNS）</string>
+    <string name="pref_mdns_desc">固定の .local 名をネットワークに公開し、IP を入力しなくてもパソコンから接続できるようにします</string>
+    <string name="pref_mdns_host_label">ドメインのプレフィックス</string>
+    <string name="pref_mdns_bind_title">ネットワークインターフェース</string>
+    <string name="pref_mdns_bind_auto">自動（推奨）</string>
+    <string name="pref_mdns_bind_none">利用可能なネットワークインターフェースがありません</string>
     <string name="section_language">言語</string>
     <string name="pref_language_title">アプリの言語</string>
     <string name="section_about">情報</string>
@@ -209,4 +216,6 @@
     <string name="web_create_failed">作成失敗: %1$s</string>
     <string name="web_downloading">ダウンロードを開始…</string>
 
+    <string name="guide_toggle">接続ガイドの表示/非表示</string>
+    <string name="srv_err_port_bind">ポート %1$d を使用できません：既に使用中か、システムが 1024 未満のポートを許可していない可能性があります。別のポートを試してください</string>
 </resources>

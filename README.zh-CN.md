@@ -32,6 +32,7 @@ DavSrv 在安卓 App 里跑一个完整的 WebDAV 服务。启动服务、在电
 | **传输** | 收发全部流式（64 KiB 缓冲）、`Range` 请求与 `Content-Range` 支持拖动与续传、`ETag` / `Last-Modified` 配合 `If-None-Match` 与 `If-Modified-Since` 做缓存协商 |
 | **内置网页版** | 浏览器打开根地址即可浏览、下载、上传、新建文件夹；支持深色模式，配色与 App 一致 |
 | **前台服务** | 通知栏直接启停，地址常驻可见，二维码在首页卡片，换网自动刷新 IP，可选开机自启 |
+| **局域网域名（mDNS）** | 广播固定的 `.local` 域名 —— 默认为随机两位小写字母（如 `qx.local`），前缀可自定义并可绑定指定网卡 —— 外加 `_webdav._tcp` Bonjour 服务；在首页开关 |
 | **省电** | 不持有唤醒锁，请求日志走内存环形缓冲，只在你需要长传输时才可选 Wi-Fi 锁 |
 | **16 种语言** | 默认跟随系统语言；阿拉伯语、乌尔都语自动 RTL 布局 |
 
@@ -46,7 +47,7 @@ Windows 资源管理器（映射网络驱动器）· macOS Finder（⌘K）· iO
 
 ## 安装
 
-**直接装 APK** —— 到 [Releases](../../releases) 页下载 `DavSrv-1.0.0-debug.apk` 侧载。debug 包用的是默认调试签名，自己用没问题，但不要拿它对外分发。
+**直接装 APK** —— 到 [Releases](../../releases) 页下载 `DavSrv-1.0.1-debug.apk` 侧载。debug 包用的是默认调试签名，自己用没问题，但不要拿它对外分发。
 
 **自己编译**
 
@@ -84,6 +85,8 @@ export KEYSTORE_PATH=/path/to/release.jks KEYSTORE_PASS=... KEY_ALIAS=... KEY_PA
 
 4. 用默认账号 **`root` / `1234`** 登录，然后到「账号」页改掉。
 
+在 Windows 10+、macOS 与 iOS 上，手机还可以用 `http://<名字>.local:8080` 访问 —— 完整地址显示在首页卡片。在首页「局域网域名」卡片（共享目录卡片上方）可以自定义域名前缀，并把广播绑定到指定网卡（默认自动选择）。改动即时生效，无需重启服务；IP 地址始终可用，作为兜底。
+
 > **正式使用前请先改默认密码。** 这是公开的默认凭据，而服务对整个局域网可见。
 
 ## 存储模式与「能不能写」
@@ -106,6 +109,8 @@ export KEYSTORE_PATH=/path/to/release.jks KEYSTORE_PASS=... KEY_ALIAS=... KEY_PA
 | 返回 `423 Locked` | 上次会话留下的锁占着文件 | 停止再启动服务即可（锁只存在内存里） |
 | 重命名提示「找不到该项目」 | 1.0.0 之前的构建在复制回退失败时仍删了源文件 | 已修复：同目录移动走原子 rename，复制失败绝不删源文件 |
 | Windows 无法用 Basic 认证映射 | WebClient 默认禁止明文 HTTP 上的 Basic 认证 | 在 `HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\DAV` 下把 `BasicAuthLevel` 设为 `2`，然后重启 **WebClient** 服务 |
+| `<名字>.local` 解析不了 | 组播被拦截（路由器开了 AP 隔离），或系统没有 mDNS 解析器 —— Linux 需要 Avahi；Android 12 之前的浏览器可能解析不了 | 改用 IP 地址、关闭 AP 隔离，或安装 mDNS 解析器 |
+| 1024 以下端口启动失败（旧版本会闪退） | Android 应用是非特权用户，内核禁止占用 1024 以下的端口 | 端口范围固定为 1024 - 65535（内核限制，无法放开） |
 | 上传后文件名多出 `(1)` 或后缀 | SAF provider 擅自改了文件名 | 已修复：创建后校验文件名，不一致则改回或回滚 |
 
 「日志」页会记录每次请求的方法、路径、账号、状态码与字节数。**状态码是最快的定位手段**：`403` 是权限，`404` / `409` 是路径，`423` 是锁。
@@ -154,6 +159,7 @@ app/src/main/kotlin/com/oaurumo/davsrv/
 - **Android 10 对整盘路径访问有限制**，建议改用 SAF 目录授权。
 - **只提供简体中文一套资源**（`values-zh-rCN`）：系统语言为繁体中文（zh-TW / zh-HK）时显示简体，而不是回退英语。
 - **一个服务实例对应一个目录树**：共享根是单个文件夹，默认不是整个文件系统。
+- **mDNS 依赖组播**：开启 AP/客户端隔离的路由器会拦截组播，此时 `.local` 域名无法解析，IP 地址不受影响。
 
 ## 参与
 

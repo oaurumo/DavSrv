@@ -105,6 +105,25 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     fun setBootStart(value: Boolean) = Repo.run { Repo.setBootStart(value) }
     fun setWifiLock(value: Boolean) = Repo.run { Repo.setWifiLock(value) }
 
+    // These pass the *new* settings explicitly: Repo.settings is refreshed by
+    // an async DataStore collector, so reading it right after the write races.
+    fun setMdnsEnabled(value: Boolean) = Repo.run {
+        Repo.setMdnsEnabled(value)
+        WebDavServer.applyMdnsSettings(Repo.settings.value.copy(mdnsEnabled = value))
+    }
+
+    fun setMdnsHost(value: String) = Repo.run {
+        Repo.setMdnsHost(value)
+        WebDavServer.applyMdnsSettings(Repo.settings.value.copy(mdnsHost = value.trim()))
+    }
+
+    fun setMdnsBindIp(value: String) = Repo.run {
+        Repo.setMdnsBindIp(value)
+        WebDavServer.applyMdnsSettings(Repo.settings.value.copy(mdnsBindIp = value.trim()))
+    }
+
+    fun setGuideHidden(value: Boolean) = Repo.run { Repo.setGuideHidden(value) }
+
     /** Runs a create/rename/delete probe so the user can verify write access on device. */
     fun selfTest(onResult: (String?) -> Unit) {
         viewModelScope.launch {

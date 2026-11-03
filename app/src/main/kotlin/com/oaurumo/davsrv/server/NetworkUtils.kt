@@ -5,11 +5,14 @@ import java.net.NetworkInterface
 
 object NetworkUtils {
 
-    /** Best-effort LAN IPv4 (Wi-Fi/Ethernet preferred). */
-    fun localIpv4(): String? {
-        val candidates = ArrayList<Pair<Int, String>>()
+    /** One LAN interface candidate: NIC name + IPv4, ordered by preference. */
+    data class Nic(val name: String, val ip: String, val priority: Int)
+
+    /** All usable site-local IPv4s with their NIC, best interface first. */
+    fun allIps(): List<Nic> {
+        val candidates = ArrayList<Nic>()
         try {
-            val interfaces = NetworkInterface.getNetworkInterfaces() ?: return null
+            val interfaces = NetworkInterface.getNetworkInterfaces() ?: return candidates
             for (nic in interfaces) {
                 if (!nic.isUp || nic.isLoopback) continue
                 val name = nic.name ?: ""
@@ -23,12 +26,15 @@ object NetworkUtils {
                 for (address in nic.inetAddresses) {
                     if (address is Inet4Address && address.isSiteLocalAddress && !address.isLoopbackAddress) {
                         val host = address.hostAddress ?: continue
-                        if (!host.startsWith("169.254.")) candidates.add(priority to host)
+                        if (!host.startsWith("169.254.")) candidates.add(Nic(name, host, priority))
                     }
                 }
             }
         } catch (_: Throwable) {
         }
-        return candidates.minByOrNull { it.first }?.second
+        return candidates.sortedBy { it.priority }
     }
+
+    /** Best-effort LAN IPv4 (Wi-Fi/Ethernet preferred). */
+    fun localIpv4(): String? = allIps().firstOrNull()?.ip
 }

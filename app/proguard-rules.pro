@@ -6,3 +6,7 @@
 -keepclassmembers class kotlinx.coroutines.** { volatile <fields>; }
 # Keep enum values used reflectively by ktor content type
 -keepclassmembers enum io.ktor.http.** { *; }
+
+# jmDNS (mDNS announcer)
+-dontwarn javax.jmdns.**
+-keep class javax.jmdns.** { *; }

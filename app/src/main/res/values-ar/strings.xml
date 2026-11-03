@@ -116,6 +116,13 @@
     <string name="pref_wifi_desc">أكثر استقراراً للنقل الكبير؛ استهلاك بطارية أعلى قليلاً</string>
     <string name="pref_hidden_title">إظهار الملفات المخفية</string>
     <string name="pref_hidden_desc">الملفات والمجلدات التي تبدأ بنقطة</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">اسم النطاق المحلي (mDNS)</string>
+    <string name="pref_mdns_desc">يعلن عن اسم ثابت ينتهي بـ local. على الشبكة، فيتمكن الحاسوب من الاتصال دون إدخال عنوان IP</string>
+    <string name="pref_mdns_host_label">بادئة النطاق</string>
+    <string name="pref_mdns_bind_title">ربط واجهة الشبكة</string>
+    <string name="pref_mdns_bind_auto">تلقائي (مستحسن)</string>
+    <string name="pref_mdns_bind_none">لم يتم العثور على واجهة شبكة</string>
     <string name="section_language">اللغة</string>
     <string name="pref_language_title">لغة التطبيق</string>
     <string name="section_about">حول</string>
@@ -209,4 +216,6 @@
     <string name="web_create_failed">فشل الإنشاء: %1$s</string>
     <string name="web_downloading">بدء التنزيل…</string>
 
+    <string name="guide_toggle">عرض أو إخفاء دليل الاتصال</string>
+    <string name="srv_err_port_bind">لا يمكن استخدام المنفذ %1$d: ربما يكون قيد الاستخدام بالفعل، أو لا يسمح النظام بالمنافذ الأقل من 1024. جرّب منفذًا آخر</string>
 </resources>

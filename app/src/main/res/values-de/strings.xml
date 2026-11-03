@@ -116,6 +116,13 @@
     <string name="pref_wifi_desc">Stabiler bei großen Übertragungen; etwas mehr Akkuverbrauch</string>
     <string name="pref_hidden_title">Versteckte Dateien zeigen</string>
     <string name="pref_hidden_desc">Dateien und Ordner, die mit einem Punkt beginnen</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">Netzwerk-Domain (mDNS)</string>
+    <string name="pref_mdns_desc">Meldet einen festen .local-Namen im Netzwerk an, damit Computer ohne Eingabe der IP-Adresse verbinden können</string>
+    <string name="pref_mdns_host_label">Domain-Präfix</string>
+    <string name="pref_mdns_bind_title">Netzwerkadapter</string>
+    <string name="pref_mdns_bind_auto">Automatisch (empfohlen)</string>
+    <string name="pref_mdns_bind_none">Kein Netzwerkadapter gefunden</string>
     <string name="section_language">Sprache</string>
     <string name="pref_language_title">App-Sprache</string>
     <string name="section_about">Über</string>
@@ -209,4 +216,6 @@
     <string name="web_create_failed">Erstellen fehlgeschlagen: %1$s</string>
     <string name="web_downloading">Download startet…</string>
 
+    <string name="guide_toggle">Verbindungsanleitung ein- oder ausblenden</string>
+    <string name="srv_err_port_bind">Port %1$d kann nicht belegt werden: möglicherweise bereits in Verwendung, oder das System untersagt Ports unter 1024. Wähle einen anderen Port</string>
 </resources>

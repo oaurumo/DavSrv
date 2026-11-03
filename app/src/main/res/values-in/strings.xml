@@ -138,6 +138,13 @@
     <string name="pref_wifi_desc">Lebih stabil untuk transfer besar; konsumsi baterai sedikit lebih tinggi</string>
     <string name="pref_hidden_title">Tampilkan berkas tersembunyi</string>
     <string name="pref_hidden_desc">Berkas dan folder yang diawali titik</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">Nama domain LAN (mDNS)</string>
+    <string name="pref_mdns_desc">Menyiarkan nama .local tetap di jaringan agar komputer dapat terhubung tanpa memasukkan IP</string>
+    <string name="pref_mdns_host_label">Awalan domain</string>
+    <string name="pref_mdns_bind_title">Antarmuka jaringan</string>
+    <string name="pref_mdns_bind_auto">Otomatis (disarankan)</string>
+    <string name="pref_mdns_bind_none">Tidak ada antarmuka jaringan</string>
     <string name="section_language">Bahasa</string>
     <string name="pref_language_title">Bahasa aplikasi</string>
     <string name="section_about">Tentang</string>
@@ -235,4 +242,6 @@
     <string name="web_create_failed">Gagal membuat: %1$s</string>
     <string name="web_downloading">Memulai unduhan…</string>
 
+    <string name="guide_toggle">Tampilkan atau sembunyikan panduan koneksi</string>
+    <string name="srv_err_port_bind">Tidak dapat memakai port %1$d: mungkin sudah digunakan, atau sistem melarang port di bawah 1024. Coba port lain</string>
 </resources>

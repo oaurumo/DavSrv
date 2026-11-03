@@ -138,6 +138,13 @@
     <string name="pref_wifi_desc">More stable for large transfers; slightly higher battery use</string>
     <string name="pref_hidden_title">Show hidden files</string>
     <string name="pref_hidden_desc">Files and folders starting with a dot</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">LAN domain name (mDNS)</string>
+    <string name="pref_mdns_desc">Announce a fixed .local name on the network so computers can connect without typing the IP</string>
+    <string name="pref_mdns_host_label">Domain prefix</string>
+    <string name="pref_mdns_bind_title">Bind interface</string>
+    <string name="pref_mdns_bind_auto">Auto (recommended)</string>
+    <string name="pref_mdns_bind_none">No network interface found</string>
     <string name="section_language">Language</string>
     <string name="pref_language_title">App language</string>
     <string name="section_about">About</string>
@@ -235,4 +242,6 @@
     <string name="web_create_failed">Create failed: %1$s</string>
     <string name="web_downloading">Starting download…</string>
 
+    <string name="guide_toggle">Show or hide the connection guide</string>
+    <string name="srv_err_port_bind">Cannot bind port %1$d: it may already be in use, or the system forbids ports below 1024. Try another port</string>
 </resources>

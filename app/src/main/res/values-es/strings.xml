@@ -116,6 +116,13 @@
     <string name="pref_wifi_desc">Más estable para transferencias grandes; consume algo más de batería</string>
     <string name="pref_hidden_title">Mostrar archivos ocultos</string>
     <string name="pref_hidden_desc">Archivos y carpetas que empiezan por punto</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">Nombre de dominio local (mDNS)</string>
+    <string name="pref_mdns_desc">Anuncia un nombre .local fijo en la red para que los equipos se conecten sin escribir la IP</string>
+    <string name="pref_mdns_host_label">Prefijo del dominio</string>
+    <string name="pref_mdns_bind_title">Interfaz de red</string>
+    <string name="pref_mdns_bind_auto">Automático (recomendado)</string>
+    <string name="pref_mdns_bind_none">No se encontró ninguna interfaz de red</string>
     <string name="section_language">Idioma</string>
     <string name="pref_language_title">Idioma de la aplicación</string>
     <string name="section_about">Acerca de</string>
@@ -209,4 +216,6 @@
     <string name="web_create_failed">Error al crear: %1$s</string>
     <string name="web_downloading">Iniciando descarga…</string>
 
+    <string name="guide_toggle">Mostrar u ocultar la guía de conexión</string>
+    <string name="srv_err_port_bind">No se puede usar el puerto %1$d: puede estar en uso o el sistema no permite puertos por debajo de 1024. Prueba con otro puerto</string>
 </resources>

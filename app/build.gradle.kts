@@ -12,10 +12,23 @@ android {
         applicationId = "com.oaurumo.davsrv"
         minSdk = 23
         targetSdk = 37
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.0.1"
 
         vectorDrawables { useSupportLibrary = true }
+    }
+
+    // One APK per CPU architecture, plus a universal APK that fits all.
+    // The app is pure JVM (no native libs), so the split APKs are identical
+    // in content — they exist for store/MDM filtering and smaller side-loads
+    // once native deps are ever added.
+    splits {
+        abi {
+            isEnable = true
+            reset()
+            include("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+            isUniversalApk = true
+        }
     }
 
     signingConfigs {
@@ -106,4 +119,7 @@ dependencies {
 
     // QR code generation
     implementation("com.google.zxing:core:3.5.3")
+
+    // mDNS / Bonjour: advertises <name>.local so computers can skip the IP
+    implementation("org.jmdns:jmdns:3.5.9")
 }

@@ -9,6 +9,7 @@ import com.oaurumo.davsrv.data.LogStore
 import com.oaurumo.davsrv.data.Passwords
 import com.oaurumo.davsrv.data.Repo
 import com.oaurumo.davsrv.data.ServerState
+import com.oaurumo.davsrv.data.SettingsStore
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpMethod
 import io.ktor.http.HttpStatusCode
@@ -16,6 +17,8 @@ import io.ktor.server.application.Application
 import io.ktor.server.application.ApplicationCall
 import io.ktor.server.application.call
 import io.ktor.server.cio.CIO
+import java.net.InetSocketAddress
+import java.net.ServerSocket
 import io.ktor.server.engine.ApplicationEngine
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.request.httpMethod
@@ -27,6 +30,7 @@ import io.ktor.server.routing.routing
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import java.net.InetAddress
 import java.security.MessageDigest
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.atomic.AtomicLong
@@ -57,9 +61,15 @@ object WebDavServer {
 
     private val authCache = ConcurrentHashMap<String, Long>()
 
+
     fun init(context: Context) {
         appContext = context.applicationContext
         ServerText.init(context)
+        MdnsAnnouncer.init(context)
+        MdnsAnnouncer.onAnnounced = { label ->
+            // null means registration failed; the IP URL keeps working either way.
+            if (isRunning) _state.value = _state.value.copy(mdnsHost = label)
+        }
     }
 
     val isRunning: Boolean get() = engine != null
@@ -68,6 +78,24 @@ object WebDavServer {
     fun start(port: Int): Result<Unit> {
         if (engine != null) return Result.success(Unit)
         val safePort = port.coerceIn(1024, 65535)
+
+        // CIO surfaces bind failures (port busy, or ports below 1024 which
+        // unprivileged Android apps may not claim) asynchronously inside the
+        // engine - an unhandled BindException there kills the whole process.
+        // Probe the port synchronously first and turn failure into a clean,
+        // localized error instead of a crash.
+        val probe = runCatching {
+            ServerSocket().use { ss ->
+                ss.reuseAddress = true
+                ss.bind(InetSocketAddress("0.0.0.0", safePort))
+            }
+        }
+        if (probe.isFailure) {
+            val msg = ServerText.s(R.string.srv_err_port_bind, safePort)
+            _state.value = _state.value.copy(running = false, error = msg)
+            return Result.failure(probe.exceptionOrNull() ?: IllegalStateException(msg))
+        }
+
         return runCatching {
             val instance = embeddedServer(CIO, port = safePort, host = "0.0.0.0") {
                 configureRouting()
@@ -83,6 +111,7 @@ object WebDavServer {
                 ip = NetworkUtils.localIpv4(),
                 startedAt = System.currentTimeMillis()
             )
+            announceMdns()
         }.onFailure { t ->
             engine = null
             _state.value = _state.value.copy(running = false, error = t.message ?: ServerText.s(R.string.srv_err_start_failed))
@@ -91,6 +120,7 @@ object WebDavServer {
 
     @Synchronized
     fun stop() {
+        MdnsAnnouncer.stop()
         runCatching { engine?.stop(300, 800) }
         engine = null
         lockManager.clear()
@@ -99,8 +129,43 @@ object WebDavServer {
     }
 
     fun refreshIp() {
-        if (_state.value.running) _state.value = _state.value.copy(ip = NetworkUtils.localIpv4())
+        if (!_state.value.running) return
+        _state.value = _state.value.copy(ip = NetworkUtils.localIpv4())
+        // The A record binds to the interface address: re-announce when the
+        // phone moved to another network or the bound NIC disappeared.
+        applyMdns(Repo.settings.value)
     }
+
+    /**
+     * Re-evaluates the mDNS announcement after a settings change. Callers MUST
+     * pass the new settings: [Repo.settings] is updated by an asynchronous
+     * DataStore collector, so reading it here would see the previous values
+     * (that is why a saved custom domain once never took effect).
+     */
+    fun applyMdnsSettings(settings: AppSettings) = applyMdns(settings)
+
+    private fun applyMdns(settings: AppSettings) {
+        if (engine == null || !settings.mdnsEnabled) {
+            MdnsAnnouncer.stop()
+            _state.value = _state.value.copy(mdnsHost = null)
+            return
+        }
+        val nics = NetworkUtils.allIps()
+        val ip = when {
+            // Pinned NIC: use it while it still exists, fall back to auto.
+            settings.mdnsBindIp.isNotBlank() -> nics.firstOrNull { it.ip == settings.mdnsBindIp }?.ip
+            else -> nics.firstOrNull()?.ip
+        }
+        if (ip == null) {
+            MdnsAnnouncer.stop()
+            _state.value = _state.value.copy(mdnsHost = null)
+            return
+        }
+        val label = settings.mdnsHost.ifBlank { SettingsStore.randomLabel() }
+        MdnsAnnouncer.start(label, InetAddress.getByName(ip), settings.port)
+    }
+
+    private fun announceMdns() = applyMdns(Repo.settings.value)
 
     fun clearError() {
         if (_state.value.error != null) _state.value = _state.value.copy(error = null)

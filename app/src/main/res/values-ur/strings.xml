@@ -138,6 +138,13 @@
     <string name="pref_wifi_desc">بڑی منتقلی کے لیے زیادہ مستحکم؛ بیٹری تھوڑی زیادہ خرچ ہوتی ہے</string>
     <string name="pref_hidden_title">پوشیدہ فائلیں دکھائیں</string>
     <string name="pref_hidden_desc">ڈاٹ سے شروع ہونے والی فائلیں اور فولڈر</string>
+    <!-- mDNS LAN domain -->
+    <string name="pref_mdns_title">LAN ڈومین نام (mDNS)</string>
+    <string name="pref_mdns_desc">نیٹ ورک پر ایک مستقل .local نام کا اعلان کرتا ہے تاکہ کمپیوٹر IP لکھے بغیر جڑ سکیں</string>
+    <string name="pref_mdns_host_label">ڈومین سابقہ</string>
+    <string name="pref_mdns_bind_title">نیٹ ورک انٹرفیس</string>
+    <string name="pref_mdns_bind_auto">خودکار (تجویز کردہ)</string>
+    <string name="pref_mdns_bind_none">کوئی نیٹ ورک انٹرفیس نہیں ملا</string>
     <string name="section_language">زبان</string>
     <string name="pref_language_title">ایپ کی زبان</string>
     <string name="section_about">تعارف</string>
@@ -235,4 +242,6 @@
     <string name="web_create_failed">بنانے میں ناکامی: %1$s</string>
     <string name="web_downloading">ڈاؤن لوڈ شروع ہو رہا ہے…</string>
 
+    <string name="guide_toggle">کنکشن گائیڈ دکھائیں یا چھپائیں</string>
+    <string name="srv_err_port_bind">پورٹ %1$d استعمال نہیں ہو سکتا: یہ پہلے سے زیرِ استعمال ہو سکتا ہے، یا سسٹم 1024 سے کم پورٹس کی اجازت نہیں دیتا۔ کوئی دوسرا پورٹ آزمائیں</string>
 </resources>
